@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 
+
 @NgModule({
     imports: [
         CommonModule,
@@ -16,10 +17,12 @@ import { AuthGuard } from './shared';
         BrowserAnimationsModule,
         HttpClientModule,
         LanguageTranslationModule,
-        AppRoutingModule
+        AppRoutingModule,
+      
     ],
-    declarations: [AppComponent],
+    declarations: [AppComponent
+    ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
