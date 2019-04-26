@@ -15,4 +15,20 @@ export class ConseillerService {
     return fakeConseillers;
    
   }
+  
+  addConseiller(conseiller){
+    this.fakeConseillers.push(conseiller);
+    console.log(this.fakeConseillers);
+  }
+
+  delete(mle){
+    for(let i = 0; i < this.fakeConseillers.length; ++i){
+      
+      if (this.fakeConseillers[i].mle == mle) { 
+        this.fakeConseillers.splice(i,1);
+      }
+    }
+    console.log(this.fakeConseillers);
+  }
+}
 }
