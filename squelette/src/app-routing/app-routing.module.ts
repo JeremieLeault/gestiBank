@@ -8,7 +8,7 @@ import { DashClientComponent } from 'src/app/client/dash-client/dash-client.comp
 const routes: Routes = [
   { path: 'form', component: FormComponent },
   {
-    path: 'admin',
+    path: 'dash-admin',
   loadChildren: '../app/admin/admin.module#AdminModule'
   },
   { path: 'dash-conseiller', component: DashConseillerComponent},
