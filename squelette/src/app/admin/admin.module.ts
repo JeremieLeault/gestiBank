@@ -7,6 +7,9 @@ import { GestiConseillerComponent } from './gesti-conseiller/gesti-conseiller.co
 import { GestiAffectComponent } from './gesti-affect/gesti-affect.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import {RouterModule, Routes} from '@angular/router';
+import { AjoutConseillerComponent } from './ajout-conseiller/ajout-conseiller.component';
+import { ListConseillerComponent } from './list-conseiller/list-conseiller.component';
+import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.component';
 
 const adminRoutes: Routes = [
 //   {
@@ -23,10 +26,18 @@ const adminRoutes: Routes = [
   path: '',
   component: DashAdminComponent,
    },
-   {
-       path: 'dash-admin/app-gesti-conseiller',
-       component: GestiConseillerComponent
-     }
+     {
+      path: 'dash-admin/list-conseiller',
+      component: ListConseillerComponent
+    },
+    {
+      path: 'dash-admin/ajout-conseiller',
+      component: AjoutConseillerComponent
+    },
+    {
+      path: 'dash-admin/edit-conseiller',
+      component: EditConseillerComponent
+    }
 
 ];
 
@@ -36,7 +47,10 @@ const adminRoutes: Routes = [
     SearchAdminComponent,
     GestiConseillerComponent,
     GestiAffectComponent,
-    MenuAdminComponent],
+    MenuAdminComponent,
+    AjoutConseillerComponent,
+    ListConseillerComponent,
+    EditConseillerComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(adminRoutes)
