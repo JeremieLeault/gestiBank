@@ -6,24 +6,28 @@ import { SearchAdminComponent } from './search-admin/search-admin.component';
 import { GestiConseillerComponent } from './gesti-conseiller/gesti-conseiller.component';
 import { GestiAffectComponent } from './gesti-affect/gesti-affect.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
-//import { AdminRoutingModule } from './admin-routing/admin-routing.module';
 import {RouterModule, Routes} from '@angular/router';
 
 const adminRoutes: Routes = [
-  {
-    path: '',
-    component: DashAdminComponent,
-    children: [
-      {
-        path: '',
-        component: DashAdminComponent
-      },
-      {
-        path: 'list',
-        component: MenuAdminComponent
-      }
-    ],
-  }
+//   {
+//     path: '',
+//     component: DashAdminComponent,
+//      children: [
+//        {
+//          path: 'app-gesti-conseiller',
+//          component: GestiConseillerComponent
+//        }
+//      ]
+//  },
+ {
+  path: '',
+  component: DashAdminComponent,
+   },
+   {
+       path: 'dash-admin/app-gesti-conseiller',
+       component: GestiConseillerComponent
+     }
+
 ];
 
 @NgModule({
