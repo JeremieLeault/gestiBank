@@ -4,21 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormComponent } from './creation-compte/form/form.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
-import { DashAdminComponent } from './admin/dash-admin/dash-admin.component';
+//import { DashAdminComponent } from './admin/dash-admin/dash-admin.component';
 import { DashConseillerComponent } from './conseiller/dash-conseiller/dash-conseiller.component';
 import { MenuComponent } from './menu/menu.component';
+import { DashClientComponent } from './client/dash-client/dash-client.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    DashAdminComponent,
+    // DashAdminComponent,
     DashConseillerComponent,
-    MenuComponent
+    MenuComponent,
+    DashClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
