@@ -1,54 +1,32 @@
- <form action="" method="post">
-    
-    <div>
-        <label for="lname">Nom :</label>
-        <input type="text" id="lname" name="user_lname" required>
-    </div>
-    <div>
-        <label for="fname">Prénom :</label>
-        <input type="text" id="fname" name="user_fname" required>
-    </div>
-    <div>
-        <label for="mail">E-mail :</label>
-        <input type="email" id="mail" name="user_mail" required>
-    </div>
-    <div>
-        <label for="tel">Tel :</label>
-        <input type="tel" id="tel" name="user_tel" required>
-    </div>
-    <div>
-        <label for="dob">Date de naissance:</label>
-        <input type="date" id="dob" name="user_dob" required>
-    </div> 
-    <div>
-        <label for="addr">N° et voie :</label>
-        <input type="text" id="addr" name="user_addr" required>
-    </div> 
-    <div>
-        <label for="pcode">Code postal:</label>
-        <input type="number" id="pcode" name="user_pcode" required>
-    </div> 
-    <div>
-        <label for="city">Ville:</label>
-        <input type="text" id="city" name="user_city" required>
-    </div> 
-    <div>
-        <label for="status">Situation personnelle:</label>
-        <select id="status">
-            <option value="célibataire">Célibataire</option>
-            <option value="marié(e)">Marié(e)</option>
-            <option value="concubinage">Concubinage</option>
-            <option value="divorcé(e)">Divorcé(e)</option>
-            <option value="veuf(ve)">Veuf(ve)</option>
-        </select>
-    </div> 
+ <h2>Nouveau conseiller</h2>
 
+  <form #addNewConseillerForm="ngForm" (ngSubmit)="addNewConseiller(addNewConseillerForm.value)" method="POST">
+  <label for="mle">Mle *</label>
+  <input type="text" name="mle" id="mle"  ngModel>
 
-    <div>
-        <input type="button" value="Ajouter Conseiller">
-    </div> 
+  <label for="dateEmbauche">Date d'embauche *</label>
+  <input type="date" name="dateEmbauche" id="dateEmbauche" ngModel>
 
-     
-    
+  <label for="nom">Nom *</label>
+  <input type="text" id="nom" name="nom" ngModel>
+
+  <label for="prenom">Prénom *</label>
+  <input type="text" id="prenom" name="prenom" ngModel>
+
+  <label for="email">Email</label>
+  <input type="text" id="email" name="email" ngModel>
+
+  <label for="tel">Téléphone *</label>
+  <input type="text" id="tel" name="tel" ngModel>
+
+  <label for="adresse">Adresse</label>
+  <textarea name="adresse" id="adresse" cols="30" rows="10" ngModel></textarea>
+
+  <label for="codePostale">Code postal</label>
+  <input type="text" id="codePostale" name="codePostale" ngModel>
+
+  <label for="ville">Ville</label>
+  <input type="text" id="ville" name="ville" ngModel>
+
+  <input type="submit" [disabled]="!addNewConseillerForm.form.valid" value="Envoyer ma demande">
 </form>
-

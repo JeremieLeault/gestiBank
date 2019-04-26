@@ -10,6 +10,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { AjoutConseillerComponent } from './ajout-conseiller/ajout-conseiller.component';
 import { ListConseillerComponent } from './list-conseiller/list-conseiller.component';
 import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.component';
+import { FormsModule } from '@angular/forms';
 
 const adminRoutes: Routes = [
 
@@ -44,6 +45,7 @@ const adminRoutes: Routes = [
     EditConseillerComponent],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(adminRoutes)
   ]
 })
