@@ -5,9 +5,10 @@ import { MailConseillerComponent } from './mail-conseiller/mail-conseiller.compo
 import { ValidationAffectComponent } from './validation-affect/validation-affect.component';
 import { ConfigClientComponent } from './config-client/config-client.component';
 import { SearchConseillerComponent } from './search-conseiller/search-conseiller.component';
+import { MenuConseillerComponent } from './menu-conseiller/menu-conseiller.component';
 
 @NgModule({
-  declarations: [DashConseillerComponent, MailConseillerComponent, ValidationAffectComponent, ConfigClientComponent, SearchConseillerComponent],
+  declarations: [DashConseillerComponent, MailConseillerComponent, ValidationAffectComponent, ConfigClientComponent, SearchConseillerComponent, MenuConseillerComponent],
   imports: [
     CommonModule
   ]
