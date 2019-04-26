@@ -3,7 +3,7 @@
   <p class="description">Liste des comptes</p>
 </header>
 <section>
-   <table>
+   <table class="table table-hover table-striped">
     <tr>
         <td> Numero de compte </td>
         <td> Type de compte</td>
@@ -13,8 +13,10 @@
     <tr *ngFor="let listCompte of listCompte">
         <td> {{listCompte.numeroCompte}}</td>
         <td> {{listCompte.typeCompte}}</td>
-        <td> {{listCompte.solde}}</td>
-        <td> <button type ="submit" > Voir </button></td>
+        <td> {{listCompte.solde}} euros</td>
+        <td> 
+            <button type="submit" class="btn btn-secondary">Details</button>
+        </td>
     </tr>
    </table>
 </section>

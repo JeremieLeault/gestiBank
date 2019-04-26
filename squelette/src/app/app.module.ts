@@ -7,6 +7,7 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { DashAdminComponent } from './admin/dash-admin/dash-admin.component';
 import { DashConseillerComponent } from './conseiller/dash-conseiller/dash-conseiller.component';
 import { MenuComponent } from './menu/menu.component';
+import { DashClientComponent } from './client/dash-client/dash-client.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MenuComponent } from './menu/menu.component';
     FormComponent,
     DashAdminComponent,
     DashConseillerComponent,
-    MenuComponent
+    MenuComponent,
+    DashClientComponent
   ],
   imports: [
     BrowserModule,
