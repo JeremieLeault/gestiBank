@@ -7,7 +7,7 @@ import { GestiConseillerComponent } from './gesti-conseiller/gesti-conseiller.co
 import { GestiAffectComponent } from './gesti-affect/gesti-affect.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import {RouterModule, Routes} from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 const adminRoutes: Routes = [
 //   {
 //     path: '',
@@ -39,7 +39,9 @@ const adminRoutes: Routes = [
     MenuAdminComponent],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(adminRoutes)
+
   ]
 })
 export class AdminModule { }
