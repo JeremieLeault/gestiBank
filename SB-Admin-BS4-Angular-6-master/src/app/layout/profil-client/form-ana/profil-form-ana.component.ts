@@ -3,11 +3,11 @@ import { ClientService } from 'src/app/client/client.service';
 
 
 @Component({
-  selector: 'form-ana-component',
-  templateUrl: './form-ana.component.html',
-  styleUrls: ['./form-ana.component.css']
+  selector: 'profil-form-ana-component',
+  templateUrl: './profil-form-ana.component.html',
+  styleUrls: ['./profil-form-ana.component.css']
 })
-export class FormAnaComponent implements OnInit {
+export class ProfilFormAnaComponent implements OnInit {
  client;
     
   constructor(private clientserv: ClientService) { }

@@ -17,5 +17,10 @@ export class ClientService {
         return fakeClient;
 
     }
+    getClient(): Client{
+        const fakecClient = new Client(1, "stephane", "Indienne", "Ananthee", "ana@gmail.com", "0102030405", "8 rue GK", 69007, "Lyon", "celibataire", 0, 1);
+        return fakecClient;
+
+    }
 
 }
