@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CompteService } from './compte.service';
-import {Compte} from '../model/compte';
+import { CompteService } from 'src/app/client/compte.service';
 
 
 @Component({
