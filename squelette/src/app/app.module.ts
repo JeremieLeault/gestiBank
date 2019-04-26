@@ -6,13 +6,15 @@ import { FormComponent } from './creation-compte/form/form.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { DashAdminComponent } from './admin/dash-admin/dash-admin.component';
 import { DashConseillerComponent } from './conseiller/dash-conseiller/dash-conseiller.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     DashAdminComponent,
-    DashConseillerComponent
+    DashConseillerComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

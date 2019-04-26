@@ -1,3 +1,73 @@
-<p>
-  form workssssssssssssssssss!
-</p>
+<form action="" method="post">
+    
+    <div>
+        <label for="lname">Nom :</label>
+        <input type="text" id="lname" name="user_lname" required>
+    </div>
+    <div>
+        <label for="fname">Prénom :</label>
+        <input type="text" id="fname" name="user_fname" required>
+    </div>
+    <div>
+        <label for="mail">E-mail :</label>
+        <input type="email" id="mail" name="user_mail" required>
+    </div>
+    <div>
+        <label for="tel">Tel :</label>
+        <input type="tel" id="tel" name="user_tel" required>
+    </div>
+    <div>
+        <label for="dob">Date de naissance:</label>
+        <input type="date" id="dob" name="user_dob" required>
+    </div> 
+    <div>
+        <label for="addr">N° et voie :</label>
+        <input type="text" id="addr" name="user_addr" required>
+    </div> 
+    <div>
+        <label for="pcode">Code postal:</label>
+        <input type="number" id="pcode" name="user_pcode" required>
+    </div> 
+    <div>
+        <label for="city">Ville:</label>
+        <input type="text" id="city" name="user_city" required>
+    </div> 
+    <div>
+        <label for="status">Situation personnelle:</label>
+        <select id="status">
+            <option value="célibataire">Célibataire</option>
+            <option value="marié(e)">Marié(e)</option>
+            <option value="concubinage">Concubinage</option>
+            <option value="divorcé(e)">Divorcé(e)</option>
+            <option value="veuf(ve)">Veuf(ve)</option>
+        </select>
+    </div> 
+    <div>
+        <label for="salary">Salaire net mensuel:</label>
+        <input type="number" id="salary" name="user_salary" required>
+    </div> 
+    <div>
+        <label for="profil">Profil souhaité:</label>
+        <input type= "radio" name="user_profil" value="Compte simple" checked> Compte simple
+        <input type= "radio" name="user_profil" value="Compte avec facilité de caisse"> Compte avec facilité de caisse
+        <input type= "radio" name="user_profil" value="Compte rémunéré"> Compte rémunéré
+        <input type= "radio" name="user_profil" value="Aucun"> Aucun
+    </div> 
+    <div>
+        <label for="justificatifs"> Justificatifs :</label>
+        <select id="justificatifs">
+            <option value="salaire">Salalire</option>
+            <option value="domicile">Domicile</option>
+        </select>
+    </div> 
+    <div>
+        <input type="button" value="Ajouter pièces jointes">
+    </div>
+    <div>
+        <input type="button" value="Je veux rejoindre GestiBank">
+    </div> 
+
+     
+    
+</form>
+
