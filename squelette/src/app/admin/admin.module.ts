@@ -12,16 +12,7 @@ import { ListConseillerComponent } from './list-conseiller/list-conseiller.compo
 import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.component';
 
 const adminRoutes: Routes = [
-//   {
-//     path: '',
-//     component: DashAdminComponent,
-//      children: [
-//        {
-//          path: 'app-gesti-conseiller',
-//          component: GestiConseillerComponent
-//        }
-//      ]
-//  },
+
  {
   path: '',
   component: DashAdminComponent,
