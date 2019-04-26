@@ -8,6 +8,7 @@ import { DashConseillerComponent } from './conseiller/dash-conseiller/dash-conse
 import { MenuComponent } from './menu/menu.component';
 import { DashClientComponent } from './client/dash-client/dash-client.component';
 import { AdminModule } from './admin/admin.module';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AdminModule } from './admin/admin.module';
     // DashAdminComponent,
     DashConseillerComponent,
     MenuComponent,
-    DashClientComponent
+    DashClientComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
