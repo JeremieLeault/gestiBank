@@ -5,10 +5,15 @@ import { ModifClientComponent } from './modif-client/modif-client.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { MailClientComponent } from './mail-client/mail-client.component';
 import { CompteComponent } from './compte/compte.component';
-import { MenuClientComponent } from './menu-client/menu-client.component';
 
 @NgModule({
-  declarations: [DashClientComponent, ModifClientComponent, TransactionComponent, MailClientComponent, CompteComponent, MenuClientComponent],
+  declarations: [
+    DashClientComponent,
+    ModifClientComponent,
+    TransactionComponent,
+    MailClientComponent,
+    CompteComponent
+  ],
   imports: [
     CommonModule
   ]
