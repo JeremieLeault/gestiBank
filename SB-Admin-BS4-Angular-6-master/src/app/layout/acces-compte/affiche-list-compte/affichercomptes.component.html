@@ -1,0 +1,20 @@
+<header>
+  <h1>Liste des comptes </h1>
+  <p class="description">Liste des comptes</p>
+</header>
+<section>
+   <table>
+    <tr>
+        <td> Numero de compte </td>
+        <td> Type de compte</td>
+        <td> Solde</td>
+        <td> </td>
+    </tr>
+    <tr *ngFor="let listCompte of listCompte">
+        <td> {{listCompte.numeroCompte}}</td>
+        <td> {{listCompte.typeCompte}}</td>
+        <td> {{listCompte.solde}}</td>
+        <td> <button type ="submit" > Voir </button></td>
+    </tr>
+   </table>
+</section>
