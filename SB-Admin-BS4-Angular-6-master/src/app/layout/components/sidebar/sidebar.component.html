@@ -42,7 +42,29 @@
             <i class="fa fa-file-o"></i>&nbsp;
             <span>{{ 'Modifier profil' | translate }}</span>
         </a>
-    
+        
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('pages')">
+                <i class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Messagerie' }}</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'pages'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/messages-box']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-file-o"></i>&nbsp;
+                            <span>{{ 'Message recus'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/new-message']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-file-o"></i>&nbsp;
+                            <span>{{ 'Nouveau message'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
 
         <div class="header-fields">
             
