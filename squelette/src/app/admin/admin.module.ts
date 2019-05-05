@@ -29,7 +29,8 @@ const adminRoutes: Routes = [
     {
       path: 'dash-admin/edit-conseiller',
       component: EditConseillerComponent
-    }
+    },
+    {path: 'dash-admin/mail-admin', component: MailAdminComponent}
 
 ];
 
