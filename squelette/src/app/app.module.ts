@@ -9,21 +9,25 @@ import { MenuComponent } from './menu/menu.component';
 import { DashClientComponent } from './client/dash-client/dash-client.component';
 import { AdminModule } from './admin/admin.module';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ClientModule } from './client/client.module';
+import { ConseillerModule } from './conseiller/conseiller.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     // DashAdminComponent,
-    DashConseillerComponent,
+    //DashConseillerComponent,
     MenuComponent,
-    DashClientComponent,
+    //DashClientComponent,
     AccueilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AdminModule,
+    ClientModule,
+    ConseillerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
