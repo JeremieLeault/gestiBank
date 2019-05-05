@@ -1,0 +1,17 @@
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+li
+{
+    list-style: none;
+    display: inline-block;
+    padding-right: 30px;
+}
+
+li a:active
+{
+    color: #3BBAE8;
+}

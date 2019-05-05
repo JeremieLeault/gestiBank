@@ -5,15 +5,35 @@ import { MailConseillerComponent } from './mail-conseiller/mail-conseiller.compo
 import { ValidationAffectComponent } from './validation-affect/validation-affect.component';
 import { ConfigClientComponent } from './config-client/config-client.component';
 import { SearchConseillerComponent } from './search-conseiller/search-conseiller.component';
+import { DemandeChequierComponent } from './demande-chequier/demande-chequier.component';
+import { DemandeCompteComponent } from './demande-compte/demande-compte.component';
+import { MenuConseillerComponent } from './menu-conseiller/menu-conseiller.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+const conseillerRoutes: Routes = [
+{path : '', component: DashConseillerComponent, },
+{path : 'dash-conseiller/validation-affect', component: ValidationAffectComponent},
+{path : 'dash-conseiller/demande-compte', component: DemandeCompteComponent},
+{path : 'dash-conseiller/demande-chequier', component: DemandeChequierComponent},
+{path : 'dash-conseiller/search-conseiller', component: SearchConseillerComponent},
+{path : 'dash-conseiller/mail-conseiller', component: MailConseillerComponent},
+
+];
 
 @NgModule({
   declarations: [DashConseillerComponent,
     MailConseillerComponent,
     ValidationAffectComponent,
     ConfigClientComponent,
-    SearchConseillerComponent],
+    SearchConseillerComponent,
+    DemandeChequierComponent,
+    DemandeCompteComponent,
+    MenuConseillerComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule.forChild(conseillerRoutes)
   ]
 })
 export class ConseillerModule { }
