@@ -1,0 +1,19 @@
+
+<section>
+     <table class="table table-hover table-striped">
+      <tr>
+          <td> Numero de compte </td>
+          <td> Type de compte</td>
+          <td> Solde</td>
+          <td> </td>
+      </tr>
+      <tr *ngFor="let listCompte of listCompte">
+          <td> {{listCompte.numeroCompte}}</td>
+          <td> {{listCompte.typeCompte}}</td>
+          <td> {{listCompte.solde}} euros</td>
+          <td> 
+              <button type="submit" class="btn btn-primary">Details</button>
+          </td>
+      </tr>
+     </table>
+  </section>

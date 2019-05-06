@@ -8,6 +8,7 @@ import { MailClientComponent } from './mail-client/mail-client.component';
 import { CompteComponent } from './compte/compte.component';
 import { MenuClientComponent } from './menu-client/menu-client.component';
 import { FormsModule } from '@angular/forms';
+import { ViewListCompteComponent } from './compte/view-list-compte/view-list-compte.component';
 
 
 const clientRoutes: Routes = [
@@ -29,7 +30,8 @@ const clientRoutes: Routes = [
     TransactionComponent,
     MailClientComponent,
     CompteComponent,
-    MenuClientComponent
+    MenuClientComponent,
+    ViewListCompteComponent
   ],
   imports: [
     CommonModule,
