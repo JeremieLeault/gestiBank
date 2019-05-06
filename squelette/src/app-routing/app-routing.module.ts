@@ -10,6 +10,7 @@ import { AccueilComponent } from 'src/app/accueil/accueil.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
+  { path: 'home-page', component: AccueilComponent },
   { path: 'form', component: FormComponent },
   { path: 'dash-admin', component:DashAdminComponent
   //loadChildren: '../app/admin/admin.module#AdminModule'
