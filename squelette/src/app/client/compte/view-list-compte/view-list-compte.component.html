@@ -12,7 +12,7 @@
           <td> {{listCompte.typeCompte}}</td>
           <td> {{listCompte.solde}} euros</td>
           <td> 
-              <button type="submit" class="btn btn-primary">Details</button>
+                <button type="submit" class="btn btn-primary" [routerLink]="['./view-compte', listCompte.numeroCompte]">Details</button>
           </td>
       </tr>
      </table>

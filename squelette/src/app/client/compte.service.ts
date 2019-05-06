@@ -15,4 +15,14 @@ export class CompteService {
   getAll()  {
     return this.fakeComptes;
   }
+
+  getCompte(id:number):Compte{
+    var tempCompte:Compte
+    for (var i = 0; i < this.fakeComptes.length; i++){
+      if (this.fakeComptes[i].getNumeroCompte() == id){
+        tempCompte = this.fakeComptes[i];
+      }
+    }
+    return tempCompte;
+  }
 }
