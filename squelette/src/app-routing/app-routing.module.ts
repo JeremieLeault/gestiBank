@@ -6,11 +6,13 @@ import { DashConseillerComponent } from 'src/app/conseiller/dash-conseiller/dash
 import { AppComponent } from 'src/app/app.component';
 import { DashAdminComponent } from 'src/app/admin/dash-admin/dash-admin.component';
 import { AccueilComponent } from 'src/app/accueil/accueil.component';
+import { LoginComponent } from 'src/app/login/login.component';
 
 const routes: Routes = [
     { path: '', component: AccueilComponent },
     { path: 'home-page', component: AccueilComponent },
     { path: 'form', component: FormComponent },
+    { path: 'login', component: LoginComponent},
     {
         path: 'dash-admin', component: DashAdminComponent
         //loadChildren: '../app/admin/admin.module#AdminModule'

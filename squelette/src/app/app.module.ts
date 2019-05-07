@@ -11,6 +11,7 @@ import { AdminModule } from './admin/admin.module';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ClientModule } from './client/client.module';
 import { ConseillerModule } from './conseiller/conseiller.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ConseillerModule } from './conseiller/conseiller.module';
     //DashConseillerComponent,
     MenuComponent,
     //DashClientComponent,
-    AccueilComponent
+    AccueilComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
