@@ -1,4 +1,5 @@
 export class Mouvement {
+  [x: string]: any;
 
     montant: number;
     date: Date;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import { Compte } from '../../compte';
 import { CompteService } from '../../compte.service';
+import { TransactionService } from '../../transaction/transaction.service';
 
 @Component({
   selector: 'app-view-compte',
@@ -12,8 +13,9 @@ export class ViewCompteComponent implements OnInit {
 
   compte: Compte;
   id: number;
+  listMouvement;
 
-  constructor(private compteService: CompteService, private route: ActivatedRoute) {
+  constructor(private compteService: CompteService, private route: ActivatedRoute, private transactionService: TransactionService) {
    }
 
   ngOnInit() {
@@ -22,6 +24,9 @@ export class ViewCompteComponent implements OnInit {
    });
     this.compte = this.compteService.getCompte(this.id);
     console.log(this.compte);
+
+    this.listMouvement = this.transactionService.getTransaction(this.id);
+    console.log(this.listMouvement);
   }
 
 }

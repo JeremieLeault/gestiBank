@@ -1,7 +1,22 @@
+<h1> Resume du compte</h1>
 
-<p>
-    Compte : {{compte.numeroCompte}}
-</p>
+<section>
+<table class="table table-hover table-striped">
+    <tr>
+        <td> Libelle </td>
+        <td> Date </td>
+        <td> Depot</td>
+        <td> Retrait</td>
+    </tr>
+    <tr *ngFor="let list of listMouvement">
+        <td> {{list.libelle}}</td>
+        <td> {{list.date}}</td>
+        <td> {{list.montant}} euros</td>
+        <td> 
+        </td>
+    </tr>
+   </table>
+</section>
 
 <button type="submit" class="btn btn-primary" onclick="history.go(-1)">Retour</button>
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Depot } from './depot';
 import { Retrait } from './retrait';
+import { Mouvement } from './mouvement';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +17,17 @@ export class TransactionService {
   constructor() { }
 
   getTransaction(id:number){
-    var tempList;
+    var tempList: Array<Mouvement> = [];
+    var tempMouvement: Mouvement;
+    var j = 0;
     for (var i=0; i < this.transactionList.length; i++){
       if (this.transactionList[i].getCompte() == id){
-        tempList.push(this.transactionList[i]);
+        tempMouvement = this.transactionList[i];
+        tempList.push();
+        tempList[j] = tempMouvement;
+        j++;
       }
     }
-    console.log(tempList);
     return tempList;
   }
 
