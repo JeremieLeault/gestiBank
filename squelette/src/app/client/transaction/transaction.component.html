@@ -1,3 +1,51 @@
-<p>
-  transaction works!
-</p>
+<h1> Effectuer un virement</h1>
+<h3> (page a implementer)</h3>
+
+<div class="row">
+  <div class="col-lg-4">
+    <fieldset class="form-group">
+      <label> Compte a debiter : </label>
+     <select class="form-control" id="status">
+       <option value="1">Compte 1</option>
+        <option value="2">Compte 2</option>
+       <option value="3">Compte 3</option>
+     </select>
+    </fieldset>
+    <fieldset class="form-group">
+      <label > Solde actuel : </label>
+    </fieldset>
+  </div>
+  <div class="col-lg-1">
+
+  </div>
+  <div class="col-lg-4">
+    <fieldset class="form-group">
+      <label> Compte a crediter : </label>
+     <select class="form-control" id="status">
+        <option value="1">Compte 1</option>
+        <option value="2">Compte 2</option>
+        <option value="3">Compte 3</option>
+      </select>
+    </fieldset>
+    <fieldset class="form-group">
+      <button type="submit" class="btn btn-primary">Ajouter un compte</button>
+    </fieldset>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <fieldset class ="form-group">
+        <label> Montant du transfert : </label>
+        <input class="form-control" type="text" id="famount" name="transfer_amount" required placeholder="Entrez le montant">
+    </fieldset>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+      <fieldset class="form-group">
+        <button type="submit" class="btn btn-primary">Valider</button>
+      </fieldset>
+    </div>
+</div>
