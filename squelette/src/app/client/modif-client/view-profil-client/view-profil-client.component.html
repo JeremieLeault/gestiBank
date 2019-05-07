@@ -13,7 +13,7 @@
 
         <div class="col-lg-4">
                 <fieldset class="form-group">
-                   <label>Prenom : </label>
+                   <label>Prénom : </label>
                    <input class="form-control" type="text" id="fname" name="user_fname" value = "{{client.prenom}}" required placeholder="Entrez votre prenom">
                </fieldset>
        </div>
@@ -32,7 +32,7 @@
 
         <div class="col-lg-4">
                 <fieldset class="form-group">
-                   <label>Telephone : </label>
+                   <label>Téléphone : </label>
                    <input class="form-control" type="tel" id="tel" name="user_tel" value = "{{client.telephone}}" required placeholder="00.00.00.00.00">
                </fieldset>
        </div>
@@ -62,7 +62,7 @@
 
         <div class="col-lg-7">
                 <fieldset class="form-group">
-                   <label>Complement d'adresse (optionnel) : </label>
+                   <label>Complément d'adresse (optionnel) : </label>
                    <input class="form-control" type="text" id="addr2" name="user_addr2" placeholder="Complement (optionnel)">
                </fieldset>
        </div>
@@ -94,47 +94,47 @@
        
        <div *ngIf="client.situation==1">
        <select class="form-control" id="status">
-              <option selected = "true" value="1">Celibataire</option>
-              <option value="2">Marie(e)</option>
+              <option selected = "true" value="1">Célibataire</option>
+              <option value="2">Marié(e)</option>
               <option value="3">Concubinage</option>
-              <option value="4">Divorce(e)</option>
+              <option value="4">Divorcé(e)</option>
               <option value="5">Veuf(ve)</option>
        </select>
        </div>
 
        <div *ngIf="client.situation==2">
        <select class="form-control" id="status">
-              <option value="1">Celibataire</option>
-              <option selected = "true" value="2">Marie(e)</option>
+              <option value="1">Célibataire</option>
+              <option selected = "true" value="2">Marié(e)</option>
               <option value="3">Concubinage</option>
-              <option value="4">Divorce(e)</option>
+              <option value="4">Divorcé(e)</option>
               <option value="5">Veuf(ve)</option>
        </select>
        </div>
        <div *ngIf="client.situation==3">
        <select class="form-control" id="status">
-              <option value="1">Celibataire</option>
-              <option value="2">Marie(e)</option>
+              <option value="1">Célibataire</option>
+              <option value="2">Marié(e)</option>
               <option selected value="3">Concubinage</option>
-              <option value="4">Divorce(e)</option>
+              <option value="4">Divorcé(e)</option>
               <option value="5">Veuf(ve)</option>
        </select>
        </div>
        <div *ngIf="client.situation==4">
        <select class="form-control" id="status">
-              <option value="1">Celibataire</option>
-              <option value="2">Marie(e)</option>
+              <option value="1">Célibataire</option>
+              <option value="2">Marié(e)</option>
               <option value="3">Concubinage</option>
-              <option selected value="4">Divorce(e)</option>
+              <option selected value="4">Divorcé(e)</option>
               <option value="5">Veuf(ve)</option>
        </select>
        </div>
        <div *ngIf="client.situation==5">
        <select class="form-control" id="status">
-              <option value="1">Celibataire</option>
-              <option value="2">Marie(e)</option>
+              <option value="1">Célibataire</option>
+              <option value="2">Marié(e)</option>
               <option value="3">Concubinage</option>
-              <option value="4">Divorce(e)</option>
+              <option value="4">Divorcé(e)</option>
               <option selected value="5">Veuf(ve)</option>
        </select>
        </div>
@@ -158,11 +158,11 @@
    <div class="row">
        <div class="col-lg-4">
             <fieldset class="form-group">
-       <label for="status">Profil souhaite: </label>
+       <label for="status">Profil souhaité: </label>
        <select class="form-control" id="profil" name="user_profil" value = "{{client.typeCpt}}">
            <option value="Compte simple">Compte simple</option>
-           <option value="Compte avec facilite de caisse">Compte avec autorisation de decouvert</option>
-           <option value="Compte renumere">Compte renumere</option>
+           <option value="Compte avec facilite de caisse">Compte avec autorisation de découvert</option>
+           <option value="Compte renumere">Compte rénuméré</option>
            <option value="Aucun">Aucun</option>
        </select>
            </fieldset>
@@ -176,7 +176,7 @@
                     <select class="form-control" id="profil" name="user_profil">
                         <option value="salaire">Salaire</option>
                         <option value="domicile">Domicile</option>
-                        <option value="identite">Identite</option>
+                        <option value="identite">Identité</option>
                         <option value="autre">Autre</option>
                   </select>
              </fieldset>
