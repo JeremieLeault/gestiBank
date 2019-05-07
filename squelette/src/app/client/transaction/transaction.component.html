@@ -1,16 +1,17 @@
 
+<h1> Effectuer un virement </h1>
+
 <div class="row">
   <div class="col-lg-4">
     <fieldset class="form-group">
       <label> Compte a debiter : </label>
-     <select class="form-control" id="status">
-       <option value="1">Compte 1</option>
-        <option value="2">Compte 2</option>
-       <option value="3">Compte 3</option>
+    
+      <select class="form-control" [(ngModel)]="listCompte.numeroCompte">
+       <option *ngFor="let listCompte of listCompte"> Compte : {{listCompte.numeroCompte}} - Solde actuel : {{listCompte.solde}} € </option>
      </select>
     </fieldset>
     <fieldset class="form-group">
-      <label > Solde actuel : </label>
+      <label > Solde actuel : <b> Je n'arrive pas à le mettre ici... </b></label>
     </fieldset>
   </div>
   <div class="col-lg-1">
@@ -20,13 +21,13 @@
     <fieldset class="form-group">
       <label> Compte a crediter : </label>
      <select class="form-control" id="status">
+        <option value="0">Compte 0</option>
         <option value="1">Compte 1</option>
         <option value="2">Compte 2</option>
-        <option value="3">Compte 3</option>
       </select>
     </fieldset>
     <fieldset class="form-group">
-      <button type="submit" class="btn btn-primary">Ajouter un compte</button>
+      <button type="submit" class="btn btn-primary" onclick="alert('Fonction en cours de déploiement.');">Ajouter un compte</button>
     </fieldset>
   </div>
 </div>
