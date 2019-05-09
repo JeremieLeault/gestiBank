@@ -1,5 +1,6 @@
 import { OnInit, Component } from '@angular/core';
 import { CompteService } from '../compte.service';
+import { Compte } from '../compte';
 
 @Component({
   selector: 'app-transaction',
@@ -10,6 +11,9 @@ import { CompteService } from '../compte.service';
 export class TransactionComponent implements OnInit {
 
   listCompte;
+  id:number;
+  solde:Number;
+  tempCompte:Compte;
   constructor(private compteService: CompteService) { }
 
   ngOnInit() {
@@ -17,4 +21,8 @@ export class TransactionComponent implements OnInit {
      console.log(this.listCompte);
   }
 
+  getCompte($event){
+    this.tempCompte = this.compteService.getCompte(this.id);
+    this.solde = this.tempCompte.getSolde();
+  }
 }

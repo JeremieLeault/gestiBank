@@ -6,10 +6,11 @@
     <fieldset class="form-group">
       <label> Compte a débiter : </label>
     
-      <select class="form-control" required [(ngModel)]="listCompte.numeroCompte">
-       <option *ngFor="let listCompte of listCompte"> Compte : {{listCompte.numeroCompte}} - Solde actuel : {{listCompte.solde}} € </option>
+      <select class="form-control" required [(ngModel)]="id" (change)="getCompte($event)">
+       <option *ngFor="let list of listCompte" value = "{{list.numeroCompte}}" >  Compte : {{list.numeroCompte}} - Solde actuel : {{list.solde}} € </option>
      </select>
     </fieldset>
+    <p> Solde du compte : {{solde}}</p>
     <fieldset class="form-group">
     </fieldset>
   </div>
