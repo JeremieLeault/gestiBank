@@ -34,15 +34,23 @@
   <div class="col-lg-4">
     <fieldset class ="form-group">
         <label> Montant du transfert : </label>
-        <input class="form-control" type="text" id="famount" name="transfer_amount" required placeholder="Entrez le montant">
+        <input class="form-control" type="text" [(ngModel)]="montant" required placeholder="Entrez le montant">
     </fieldset>
   </div>
 </div>
+<div class="row">
+    <div class="col-lg-4">
+      <fieldset class ="form-group">
+          <label> Libelle : </label>
+          <input class="form-control" type="text" [(ngModel)]="libelle" required placeholder="Entrez le libelle">
+      </fieldset>
+    </div>
+  </div>
 
 <div class="row">
     <div class="col-lg-4">
       <fieldset class="form-group">
-        <button type="submit" class="btn btn-primary">Valider</button>
+        <button type="submit" class="btn btn-primary" (click)= "doTransaction()">Valider</button>
       </fieldset>
     </div>
 </div>
