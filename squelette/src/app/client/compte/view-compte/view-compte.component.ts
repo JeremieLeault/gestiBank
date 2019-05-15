@@ -3,6 +3,8 @@ import {ActivatedRoute} from "@angular/router";
 import { Compte } from '../../compte';
 import { CompteService } from '../../compte.service';
 import { TransactionService } from '../../transaction/transaction.service';
+import { Depot } from '../../transaction/depot';
+import { Mouvement } from '../../transaction/mouvement';
 
 @Component({
   selector: 'app-view-compte',
@@ -29,4 +31,12 @@ export class ViewCompteComponent implements OnInit {
     console.log(this.listMouvement);
   }
 
+  verifCompte(tempCompte: Mouvement):boolean{
+    if (tempCompte instanceof Depot){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }

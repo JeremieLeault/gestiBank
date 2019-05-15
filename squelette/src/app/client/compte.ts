@@ -10,7 +10,6 @@ export class Compte {
 	 * on a obligatoirement besoin d'un client pour creer un compte <3
 	 */
 
-	
 
 	public constructor (numeroCompte: Number ,idClient :Number, typeCompte: Number,  decouverAutorise: Number, plafondAutorise: Number, solde :Number){
 		this.idClient = idClient;
@@ -57,6 +56,10 @@ export class Compte {
 	}
 	public setPlafondAutorise(value: Number) {
 		this.plafondAutorise = value;
+	}
+
+	public getSolde():Number{
+		return this.solde;
 	}
 }
 
