@@ -13,9 +13,7 @@ private fakeConseillers : any = [
     ];
   constructor() { }
   getAll()  {
-    
-    return this.fakeConseillers;
-   
+    return this.fakeConseillers;  
   }
  
   addConseiller(conseiller){
@@ -31,5 +29,18 @@ private fakeConseillers : any = [
       }
     }
     console.log(this.fakeConseillers);
+  }
+
+  searchConseiller(search){
+
+    var tempList :Array<Conseiller> = []
+    for(let i = 0; i < this.fakeConseillers.length; ++i){
+      
+      if ((this.fakeConseillers[i].nom.indexOf(search) == 0) || (this.fakeConseillers[i].prenom.indexOf(search) == 0)) { 
+        console.log(this.fakeConseillers[i]);
+        tempList.push(this.fakeConseillers[i]);
+      }
+    }
+    return tempList;
   }
 }

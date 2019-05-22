@@ -2,6 +2,34 @@
 
 <h1>Rechercher</h1>
 
-<input class="form-control" type="text" id="rechercher" required placeholder="Entrez votre recherche">
- <button type="submit" class="btn btn-primary">Go!</button>
+<div class="row">
+    <div class ="col-lg-6">
+        <input class="form-control" type="text" [(ngModel)]="search" required placeholder="Entrez votre recherche">
+    </div>
+    <div class ='col-lg-2'>
+       <button type="submit" class="btn btn-primary" (click) ="doSearch()"> Rechercher !</button>
+    </div>
+</div>
 
+ <section>
+    <table class="table table-hover table-striped">
+     <tr>
+         <td> Nom </td>
+         <td> Prenom</td>
+         <td> Adresse</td>
+         <td> Ville </td>
+         <td> EMail </td>
+         <td> </td>
+     </tr>
+     <tr *ngFor="let list of listConseiller">
+         <td> {{list.nom}}</td>
+         <td> {{list.prenom}}</td>
+         <td> {{list.adresse}}</td>
+         <td> {{list.ville}}</td>
+         <td> {{list.email}}</td>
+         <td> 
+               <button type="submit" class="btn btn-primary" [routerLink]="['.', list.id]"> Details </button>
+         </td>
+     </tr>
+    </table>
+ </section>
