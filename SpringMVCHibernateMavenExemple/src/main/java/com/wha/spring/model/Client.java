@@ -14,22 +14,22 @@ import org.joda.time.LocalDate;
 
 @Entity
 @Table(name = "CHILDREN")
-public class Children implements Serializable {
+public class Client implements Serializable {
 
 	@EmbeddedId
-	private ChildrenKey childrenKey;
+	private ClientKey clientKey;
 
-	public ChildrenKey getChildrenKey() {
-		return childrenKey;
+	public ClientKey getChildrenKey() {
+		return clientKey;
 	}
 
-	public void setChildrenKey(ChildrenKey childrenKey) {
-		this.childrenKey = childrenKey;
+	public void setChildrenKey(ClientKey clientKey) {
+		this.clientKey = clientKey;
 	}
 
 	@Override
 	public String toString() {
-		return "Children [childrenKey=" + childrenKey + "]";
+		return "Children [childrenKey=" + clientKey + "]";
 	}
 	
 

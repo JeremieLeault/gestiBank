@@ -10,15 +10,15 @@ import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 
 @Embeddable
-public class ChildrenKey implements Serializable{
+public class ClientKey implements Serializable{
 
 	
-	public ChildrenKey() {
+	public ClientKey() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ChildrenKey(String name, LocalDate date_naissance, String sex) {
+	public ClientKey(String name, LocalDate date_naissance, String sex) {
 		this.name = name;
 		this.date_naissance = date_naissance;
 		this.sex = sex;
