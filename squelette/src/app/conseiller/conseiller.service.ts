@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Conseiller} from "../conseiller/conseiller";
 import { Observable } from 'rxjs';
+import { Client } from '../client/client';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,16 @@ private fakeConseillers : any = [
       }
     }
     console.log(this.fakeConseillers);
+  }
+
+  searchConseiller(search:string){
+    var tempList:Array<Client> = [];
+    for(let i = 0; i < this.fakeConseillers.length; ++i){
+      
+      if (this.fakeConseillers[i].nom.indexOf(search) == 0) { 
+        tempList.push(this.fakeConseillers[i]);
+      }
+    }
+    return tempList;
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConseillerService } from '../conseiller.service';
 
 @Component({
   selector: 'app-search-conseiller',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchConseillerComponent implements OnInit {
 
-  constructor() { }
+
+  private listClient;
+  private search:string ="";
+  constructor(private conseillerService : ConseillerService) { }
 
   ngOnInit() {
+    this.listClient = this.conseillerService.getAll();
   }
 
+  doSearch(){
+    console.log(this.search);
+    if (this.search == ""){
+      this.listClient = this.conseillerService.getAll();
+    }else{
+      this.listClient = this.conseillerService.searchConseiller(this.search);
+    }
+  }
 }

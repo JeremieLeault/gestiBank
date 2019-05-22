@@ -10,6 +10,7 @@ import { DemandeCompteComponent } from './demande-compte/demande-compte.componen
 import { MenuConseillerComponent } from './menu-conseiller/menu-conseiller.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { ClientSearchComponent } from './search-conseiller/client-search/client-search.component';
 
 const conseillerRoutes: Routes = [
 {path : '', component: DashConseillerComponent, },
@@ -18,6 +19,7 @@ const conseillerRoutes: Routes = [
 {path : 'dash-conseiller/demande-chequier', component: DemandeChequierComponent},
 {path : 'dash-conseiller/search-conseiller', component: SearchConseillerComponent},
 {path : 'dash-conseiller/mail-conseiller', component: MailConseillerComponent},
+{path : 'dash-conseiller/search-conseiller/:id', component: ClientSearchComponent}
 
 ];
 
@@ -29,7 +31,8 @@ const conseillerRoutes: Routes = [
     SearchConseillerComponent,
     DemandeChequierComponent,
     DemandeCompteComponent,
-    MenuConseillerComponent],
+    MenuConseillerComponent,
+    ClientSearchComponent],
   imports: [
     CommonModule,
     FormsModule,
