@@ -19,7 +19,7 @@ const conseillerRoutes: Routes = [
 {path : 'dash-conseiller/demande-chequier', component: DemandeChequierComponent},
 {path : 'dash-conseiller/search-conseiller', component: SearchConseillerComponent},
 {path : 'dash-conseiller/mail-conseiller', component: MailConseillerComponent},
-{path : 'dash-conseiller/search-conseiller/:id', component: ClientSearchComponent}
+{path : 'dash-conseiller/search-conseiller/view-client/:id', component: ClientSearchComponent}
 
 ];
 

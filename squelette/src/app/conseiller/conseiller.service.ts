@@ -32,15 +32,4 @@ private fakeConseillers : any = [
     }
     console.log(this.fakeConseillers);
   }
-
-  searchConseiller(search:string){
-    var tempList:Array<Client> = [];
-    for(let i = 0; i < this.fakeConseillers.length; ++i){
-      
-      if (this.fakeConseillers[i].nom.indexOf(search) == 0) { 
-        tempList.push(this.fakeConseillers[i]);
-      }
-    }
-    return tempList;
-  }
 }

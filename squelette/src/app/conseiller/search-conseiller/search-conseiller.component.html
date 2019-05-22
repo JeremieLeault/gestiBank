@@ -4,7 +4,10 @@
 
 <div class="row">
     <div class ="col-lg-6">
-        <input class="form-control" type="text" [(ngModel)]="search" (blur) ="doSearch()" required placeholder="Entrez votre recherche">
+        <input class="form-control" type="text" [(ngModel)]="search" required placeholder="Entrez votre recherche">
+    </div>
+    <div class ='col-lg-2'>
+       <button type="submit" class="btn btn-primary" (click) ="doSearch()"> Rechercher </button>
     </div>
 </div>
 
@@ -15,15 +18,17 @@
          <td> Prenom</td>
          <td> Adresse</td>
          <td> Ville </td>
+         <td> EMail </td>
          <td> </td>
      </tr>
-     <tr *ngFor="let list of listClient">
-         <td> {{list.nom}}</td>
-         <td> {{list.prenom}}</td>
-         <td> {{list.adresse}}</td>
-         <td> {{list.ville}}</td>
+     <tr *ngFor="let listClient of listClient">
+         <td> {{listClient.nom}}</td>
+         <td> {{listClient.prenom}}</td>
+         <td> {{listClient.adresse}}</td>
+         <td> {{listClient.ville}}</td>
+         <td> {{listClient.email}}</td>
          <td> 
-               <button type="submit" class="btn btn-primary" [routerLink]="['./view-client', list.id]">Details</button>
+               <button type="submit" class="btn btn-primary" [routerLink]="['./view-client', listClient.id]"> Details </button>
          </td>
      </tr>
     </table>

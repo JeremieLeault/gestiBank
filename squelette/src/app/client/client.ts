@@ -1,6 +1,6 @@
 export class Client {
     
-    id: Number;
+    id: string;
     motDePasse: string;
     nom: string;
     prenom: string;
@@ -32,6 +32,9 @@ export class Client {
         this.naissance = "2000-10-01";
     }
 
+    public getId(): string {
+        return this.id ;
+    }
      public getNom(): string {
         return this.nom ;
     }
@@ -44,7 +47,7 @@ export class Client {
         return this.email ;
     }
 
-        public getTelephone(): string {
+    public getTelephone(): string {
         return this.telephone ;
     }
 
@@ -64,7 +67,7 @@ export class Client {
         return this.ville ;
     }
 
-        public getSituation(): string {
+    public getSituation(): string {
         return this.situation ;
     }
 
@@ -72,7 +75,7 @@ export class Client {
         return this.salaire ;
     }
 
-        public getTypeCpt(): string {
+    public getTypeCpt(): string {
         return this.typeCpt ;
     }
 
@@ -80,7 +83,7 @@ export class Client {
         this.salaire = salaire ;
     }
 
-        public setNom(nom: string) {
+    public setNom(nom: string) {
         this.nom = nom ;
     }
 }
