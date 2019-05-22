@@ -23,7 +23,7 @@ export class ClientSearchComponent implements OnInit {
       this.id = params['id'];
     });
 
-    this.client = this.clientService.getClient("0");
+    this.client = this.clientService.getClient(this.id);
 
 
   }
