@@ -11,45 +11,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wha.spring.model.Employee;
-import com.wha.spring.service.EmployeeService;
+import com.wha.spring.iservice.ConseillerService;
+import com.wha.spring.model.Conseiller;
 
 @RestController
-@RequestMapping("employee")
+@RequestMapping("conseiller")
 public class HelloControllerRestService {
 
 	@Autowired
-	EmployeeService service;
+	ConseillerService service;
 
 //	@Autowired
 //	AddressService addrService;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String helloWorld() {
-		return "Bienvenue";
+		return "Conseiller";
 	}
 
-	@RequestMapping(value = "/{id}")
-	public ResponseEntity<Employee> getEmployee(@PathVariable int id) {
-		Employee resultat = service.findById(id);
+	@RequestMapping(value = "/{mle}")
+	public ResponseEntity<Conseiller> getConseiller(@PathVariable int mle) {
+		Conseiller resultat = service.findByMle(mle);
 		System.out.println(resultat);
-		return new ResponseEntity<Employee>(resultat, HttpStatus.OK);
+		return new ResponseEntity<Conseiller>(resultat, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/getAll")
-	public ResponseEntity<List<Employee>> getAllEmployee() {
-		List<Employee> resultat = service.findAllEmployees();
+	public ResponseEntity<List<Conseiller>> getAllConseillers() {
+		List<Conseiller> resultat = service.findAllConseillers();
 		System.out.println(resultat);
-		return new ResponseEntity<List<Employee>>(resultat, HttpStatus.OK);
+		return new ResponseEntity<List<Conseiller>>(resultat, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/create", method=RequestMethod.POST)
-	public Employee createEmployee(@RequestBody Employee emp) {
-		service.saveEmployee(emp);
-		return emp;
+	public Conseiller createEmployee(@RequestBody Conseiller cns) {
+		service.saveConseiller(cns);
+		return cns;
 	}
 	
-//	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-//	public Response
 	
 }
