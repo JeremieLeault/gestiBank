@@ -1,0 +1,36 @@
+$topnav-background-color: rgba(63, 175, 236, 0.589);
+.headbar {
+    z-index: 100;
+    margin-top: 60px;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background-color: $topnav-background-color;
+    padding: 5px;
+    font-family: 'Noticia Text', serif;
+    font-size: 18px;
+    font-weight: bold;
+    // border-top: 1px solid rgba(255,255,255,0.3);
+    .menu{
+        
+        text-align:left;
+        list-style-position: inside
+        
+        a{
+            height : 45px;
+            background: $topnav-background-color;
+            color: rgb(1, 1, 17);
+            text-decoration: none;
+            
+        }
+        a:hover {
+            background: darken($topnav-background-color, 5%);
+            color: #fff;
+        }
+        a.router-link-active {
+            height : 45px;
+            background: darken($topnav-background-color, 5%);
+            color: #fff;
+        }
+    }
+}

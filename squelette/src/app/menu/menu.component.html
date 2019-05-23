@@ -1,22 +1,27 @@
-<nav>
-    <ul>
-    <li>
-        <p><a routerLink="/home-page">Accueil</a></p>
-    </li>
-    <li>
-        <p><a routerLink="/form">Creation de compte</a></p>
-    </li>
-    <li>
-        <p><a routerLink="/login">Login</a></p>
-     </li>
-    <li>
-        <p><a routerLink="/dash-admin">Admin</a></p>
-    </li>
-    <li>
-        <p><a routerLink="/dash-conseiller">Conseiller</a></p>
-    </li>
-    <li>
-        <p><a routerLink="/dash-client">Client</a></p>
-    </li>
-    </ul>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="#"> GestiBank </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item d-none d-xl-block">
+             
+            </li> &nbsp;
+            <li class="nav-item dropdown" ngbDropdown>
+                <a routerLink="/form" class="dropdown-item">Creation de compte</a>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
+                <a routerLink="/login" class="dropdown-item">Login</a>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
+                <a routerLink="/dash-admin" class="dropdown-item">Admin</a>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
+                <a routerLink="/dash-conseiller" class="dropdown-item">Conseiller</a>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
+                <a routerLink="/dash-client" class="dropdown-item">Client</a>
+            </li>
+
+        </ul>
+    </div>
 </nav>
+

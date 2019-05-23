@@ -1,0 +1,24 @@
+$topnav-background-color: #3FB0EC;
+:host {
+    .navbar {
+
+        background-color: $topnav-background-color;
+        .navbar-brand {
+            color: black;
+            font-family: 'Noticia Text', serif;
+            font-size: 24px;
+
+        }
+        .nav-item > a {
+            margin-top: 0px;
+            color: Black;
+            font-family: 'Noticia Text', serif;
+            font-size: 18px;
+            font-weight: bold;
+            &:hover {
+                color: #fff;
+                background: darken($topnav-background-color, 5%);
+            }
+        }
+    }
+}
