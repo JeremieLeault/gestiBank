@@ -1,76 +1,66 @@
 <app-menu-admin></app-menu-admin>
-<table>
-  <tr>
+
+<table class="table table-hover table-striped">
+  <tr style="text-align: center; font-weight: bold;">
     <td>Nom</td>
     <td>Prenom</td>
     <td>Date de demande</td>
     <td>Conseiller</td>
+    <td></td>
   </tr>
-  <tr>
+  <tr style="text-align: center;">
     <td>Jean</td>
     <td>Michel</td>
     <td>24/01</td>
     <td>
-       <select>
-           <option value="">Conseiller 1</option>
-           <option value="">Conseiller 2</option>
-           <option value="">Conseiller 3</option>
-           <option value="">Conseiller 4</option>
-       </select>
+      <select class="form-control">
+        <option *ngFor="let list of conseillerList" value="list.mle">{{list.nom}}</option>
+      </select>
     </td>
     <td>
-     <button type="submit">Valider</button>
+      <button type="submit" class="btn btn-success">Valider</button>
     </td>
   </tr>
 
-  <tr>
+  <tr style="text-align: center;">
     <td>Machin</td>
     <td>chose</td>
     <td>28/12</td>
     <td>
-       <select>
-           <option value="">Conseiller 1</option>
-           <option value="">Conseiller 2</option>
-           <option value="">Conseiller 3</option>
-           <option value="">Conseiller 4</option>
-       </select>
+      <select class="form-control">
+        <option *ngFor="let list of conseillerList" value="list.mle">{{list.nom}}</option>
+      </select>
     </td>
     <td>
-     <button type="submit">Valider</button>
+      <button type="submit" class="btn btn-success">Valider</button>
     </td>
   </tr>
 
-  <tr>
+  <tr style="text-align: center;">
     <td>Bidule</td>
     <td>Chouette</td>
     <td>18/09</td>
     <td>
-       <select>
-           <option value="">Conseiller 1</option>
-           <option value="">Conseiller 2</option>
-           <option value="">Conseiller 3</option>
-           <option value="">Conseiller 4</option>
-       </select>
+      <select class="form-control">
+        <option *ngFor="let list of conseillerList" value="list.mle">{{list.nom}}</option>
+      </select>
     </td>
     <td>
-     <button type="submit">Valider</button>
+      <button type="submit" class="btn btn-success">Valider</button>
     </td>
   </tr>
 
-  <tr>
+  <tr style="text-align: center;">
     <td>Jean</td>
     <td>Nemar</td>
     <td>07/05</td>
     <td>
-       <select>
-           <option value="">Conseiller 1</option>
-           <option value="">Conseiller 2</option>
-           <option value="">Conseiller 3</option>
-           <option value="">Conseiller 4</option>
-       </select>
+      <select class="form-control">
+        <option *ngFor="let list of conseillerList" value="list.mle">{{list.nom}}</option>
+      </select>
     </td>
     <td>
-     <button type="submit">Valider</button>
+      <button type="submit" class="btn btn-success">Valider</button>
     </td>
   </tr>
 </table>

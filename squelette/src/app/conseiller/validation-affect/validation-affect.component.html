@@ -1,53 +1,28 @@
 <app-menu-conseiller></app-menu-conseiller>
 
-<section>
-     <table class="table table-hover table-striped">
-      <tr style="font-weight:bold; text-align: center;">
-        <td>Nom</td>
-        <td>Prénom</td>
-        <td>Email</td>
-        <td>Téléphone</td>
-        <td>Naissance</td>
-        <td>Num et voie</td>
-        <td>Code postal</td>
-        <td>Ville</td>
-        <td>Situation perso</td>
-        <td>Salaire</td>
-        <td>Profil souhaité</td>
-        <td>Date de demande</td>
-        <td>Document supplementaire</td>
-      </tr>
-      <tr>
-        <td>Jean</td>
-        <td>Michel</td>
-        <td>michel@gmail.com</td>
-        <td>0606060606</td>
-        <td>24/01</td>
-        <td>24 rue GK</td>
-        <td>69007</td>
-        <td>Lyon</td>
-        <td>Célibataire</td>
-        <td>2500€</td>
-        <td>Compte simple</td>
-        <td>24/01</td>
-        <td>
-        <select>
-            <option value=""> Aucun</option>
-           <option value="">Feuille de paye</option>
-           <option value="">Justificatif de domicile</option>
-           <option value="">Avis d'impot</option>
-           <option value="">Autre</option>
-           <option value=""> Refus définitif</option>
-       </select>
-    </td>
-    <td>
-     <button class="btn btn-success" type="submit">Accepter</button>
-     &nbsp;&nbsp;
-     <button class="btn btn-danger" type="submit">Rejeter</button>
-    </td>
+  <table class="table table-hover table-striped">
+    <tr style="font-weight:bold; text-align: center;">
+      <td>Nom</td>
+      <td>Prénom</td>
+      <td>Situation perso</td>
+      <td>Salaire</td>
+      <td>Profil souhaité</td>
+      <td>Date de demande</td>
+      <td> Validation </td>
+      <td></td>
+    </tr>
+    <tr style="text-align: center;">
+      <td>Jean</td>
+      <td>Michel</td>
+      <td>Célibataire</td>
+      <td>2500€</td>
+      <td>Compte simple</td>
+      <td>24/01</td>
+      <td>
+       <button class="btn btn-success" type="submit">Accepter</button>
+        &nbsp;&nbsp;
+       <button class="btn btn-danger" type="submit">Rejeter</button>
+      </td>
+      <td> <button type="submit" class="btn btn-primary" [routerLink]="['']"> Details </button> </td>
   </tr>
-
-  
 </table>
-
-</section>
