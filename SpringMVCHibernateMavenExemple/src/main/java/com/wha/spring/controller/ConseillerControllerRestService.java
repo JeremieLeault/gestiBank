@@ -16,7 +16,7 @@ import com.wha.spring.model.Conseiller;
 
 @RestController
 @RequestMapping("conseiller")
-public class HelloControllerRestService {
+public class ConseillerControllerRestService {
 
 	@Autowired
 	ConseillerService service;

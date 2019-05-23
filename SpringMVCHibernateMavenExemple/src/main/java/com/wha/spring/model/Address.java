@@ -36,6 +36,9 @@ public class Address implements Serializable{
 	
 	@Column(name="VILLE", nullable=false)
 	private String ville;
+	
+	@Column(name="COMPLEMENT", nullable=true)
+	private String complement;
 
 	public int getId() {
 		return id;

@@ -11,7 +11,7 @@ import com.wha.spring.idao.ConseillerDao;
 import com.wha.spring.iservice.ConseillerService;
 import com.wha.spring.model.Conseiller;
 
-@Service("employeeService")
+@Service("conseillerService")
 @Transactional
 public class ConseillerServiceImpl implements ConseillerService{
 
