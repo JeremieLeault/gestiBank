@@ -1,6 +1,7 @@
 package com.wha.spring.model;
 
 import java.util.Calendar;
+import java.util.Collection;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -35,7 +37,8 @@ public class Compte {
 	@Column(name = "SOLDE", nullable = true)
 	private Float solde;
 
-	
+	@OneToMany(cascade = { CascadeType.ALL}, fetch = FetchType.EAGER )
+	private Collection<Transaction> transaction;
 
 	public int getNumCompte() {
 		return numCompte;
@@ -65,6 +68,14 @@ public class Compte {
 	public String toString() {
 		return "Compte [numCompte=" + numCompte + ", typeCompte=" + typeCompte + ", solde="
 				+ solde + "]";
+	}
+
+	public Collection<Transaction> getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(Collection<Transaction> transaction) {
+		this.transaction = transaction;
 	}
 	
 	

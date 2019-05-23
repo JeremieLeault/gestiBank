@@ -25,7 +25,7 @@ import org.joda.time.LocalDate;
 @Entity
 @NamedQueries({
 	@NamedQuery( name = "findAllClients", query = "SELECT c from Client c"),
-	@NamedQuery( name = "findById", query = "SELECT c from Client c WHERE c.id_client=:id_client")
+	@NamedQuery( name = "findClientById", query = "SELECT c from Client c WHERE c.id_client=:id_client")
 })
 @Table(name = "CLIENT")
 public class Client implements Serializable {

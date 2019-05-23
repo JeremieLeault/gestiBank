@@ -27,7 +27,7 @@ public class ClientDaoImpl extends AbstractDao implements ClientDao {
 	}
 
 	public Client findById(int id_client) {
-		Query q = em.createNamedQuery("findById");
+		Query q = em.createNamedQuery("findClientById");
 		q.setParameter("id_client", id_client);
 		Client res = (Client) q.getSingleResult();
 		return res;
