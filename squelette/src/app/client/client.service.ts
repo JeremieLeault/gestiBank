@@ -7,8 +7,8 @@ import { Client } from './client';
 export class ClientService {
 
   fakeClient = [
-    new Client("0", "pwd", "Leault", "Jeremie", "jeremie.leault@gmail.com", "0706060606", "28 rue de GK", 69007, "Lyon", "celibataire", 0, 0),
-    new Client("1", "stephane", "Indienne", "Ananthee", "ana@gmail.com", "0102030405", "8 rue GK", 69007, "Lyon", "celibataire", 0, 1)
+    new Client("0", "pwd", "Leault", "Jeremie", "jeremie.leault@gmail.com", "0706060606", "28 rue de GK", 69007, "Lyon", "2", 0, 0),
+    new Client("1", "stephane", "Indienne", "Ananthee", "ana@gmail.com", "0102030405", "8 rue GK", 69007, "Lyon", "5", 0, 1)
   ];
   constructor() { }
   getAll() {

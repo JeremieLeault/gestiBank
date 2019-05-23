@@ -26,10 +26,10 @@ export class Client {
         this.adresse = adresse;
         this.codePostal = codePostal;
         this.ville = ville;
-        this.situation = "5";
+        this.situation = situation ;
         this.conseiller = conseiller;
-        this.salaire = 5000;
-        this.naissance = "2000-10-01";
+        this.salaire = 5000 ;
+        this.naissance = "2010-08-08";
     }
 
     public getId(): string {
@@ -77,6 +77,10 @@ export class Client {
 
     public getTypeCpt(): string {
         return this.typeCpt ;
+    }
+
+    public getNombreEnfant(): Number {
+        return this.nombreEnfant
     }
 
     public setSalaire(salaire: Number) {

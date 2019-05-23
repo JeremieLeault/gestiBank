@@ -1,13 +1,30 @@
+<app-menu-conseiller></app-menu-conseiller>
 
 <h1> Détails du client : Mme/M {{client.nom}} </h1>
 
     <ul class="list-group">
   <li class="list-group-item"><b>Nom : </b> {{client.nom}}</li>
   <li class="list-group-item"><b>Prénom : </b> {{client.prenom}}</li>
-  <li class="list-group-item"><b>Naissance : </b> {{client.naissance}}</li>  
+  <li class="list-group-item"><b>Naissance : </b> {{naissanceClient}}</li>  
   <li class="list-group-item"><b>Email : </b> {{client.email}}</li>
   <li class="list-group-item"><b>Téléphone : </b> {{client.telephone}}</li>
   <li class="list-group-item"><b>Adresse : </b> {{client.adresse}} - {{client.codePostal}} {{client.ville}}</li>
-  <li class="list-group-item"><b>Situation personnelle : </b> {{client.situation}} - {{client.nombreEnfant}}</li>
-  <li class="list-group-item"><b>Salaire : </b> {{client.salaire}}</li>  
+  <li class="list-group-item"><b>Situation personnelle : </b> {{situationmatri}} - {{nbEnfants}}</li>
+  <li class="list-group-item"><b>Salaire : </b> {{salaireClient}}</li>  
 </ul>
+
+<section>
+     <table class="table table-hover table-striped">
+      <tr>
+          <td> Numero de compte </td>
+          <td> Type de compte</td>
+          <td> Solde</td>
+      </tr>
+
+      <tr *ngFor="let listeCompte of listeCompte">
+          <td> {{listeCompte.Solde}}</td>
+          <td> {{listeCompte.Solde}}</td>
+          <td> {{listeCompte.Solde}} €</td>
+      </tr>
+     </table>
+  </section>
