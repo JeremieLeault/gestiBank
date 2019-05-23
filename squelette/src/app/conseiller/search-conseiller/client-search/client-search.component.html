@@ -22,9 +22,12 @@
       </tr>
 
       <tr *ngFor="let listeCompte of listeCompte">
-          <td> {{listeCompte.Solde}}</td>
-          <td> {{listeCompte.Solde}}</td>
-          <td> {{listeCompte.Solde}} €</td>
+          <td> {{listeCompte.numeroCompte}}</td>
+          <td> {{listeCompte.modifType(listeCompte.typeCompte)}}</td>
+          <td> {{listeCompte.solde}} €</td>
       </tr>
      </table>
   </section>
+<div align="right">
+  <button type="submit" class="btn btn-primary" [routerLink]="['/dash-conseiller/search-conseiller']">Retour</button>
+  </div>

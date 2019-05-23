@@ -19,9 +19,8 @@ export class ClientSearchComponent implements OnInit {
     salaireClient: any;
     naissanceClient: any;
     listeCompte;
-    compteService: any;
 
-    constructor(private route: ActivatedRoute, private clientService: ClientService, compteService: CompteService) {
+    constructor(private route: ActivatedRoute, private clientService: ClientService, private compteService: CompteService) {
 
     }
 
@@ -61,20 +60,21 @@ export class ClientSearchComponent implements OnInit {
         }
 
         if (this.client.nombreEnfant == null) {
-            this.nbEnfants = "Non renseigné";
-        } else { this.nbEnfants = this.client.nombreEnfant + " enfant(s)" }
+            this.nbEnfants = 'Non renseigné';
+        } else { this.nbEnfants = this.client.nombreEnfant + ' enfant(s)' }
 
         if (this.client.salaire == null) {
-            this.salaireClient = "Non renseigné";
-        } else { this.salaireClient = this.client.salaire + " €" }
+            this.salaireClient = 'Non renseigné';
+        } else { this.salaireClient = this.client.salaire + ' €' }
 
         if (this.client.naissance == null) {
-            this.naissanceClient = "Non renseigné";
-        } else { this.naissanceClient = this.client.naissance }
+            this.naissanceClient = 'Non renseigné';
+        } else { this.naissanceClient = this.client.naissance; }
 
-        //this.listeCompte = this.compteService.getAll();
-        // console.log(this.listeCompte);
+        this.listeCompte = this.compteService.getAll();
+
 
     }
+
 
 }

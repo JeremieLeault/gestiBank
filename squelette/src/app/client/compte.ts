@@ -60,6 +60,30 @@ export class Compte {
 
 	public getSolde():Number{
 		return this.solde;
-	}
+    }
+    
+    public modifType(type: Number):string {
+        var typeCpt : string ; 
+                switch (type) {
+            case '1': {
+                typeCpt = 'Compte simple';
+                break;
+            }
+            case '2': {
+                typeCpt = 'Compte avec autorisation de découvert';
+                break;
+            }
+            case '3': {
+                typeCpt = 'Compte rénuméré';
+                break;
+            }
+            default: {
+                typeCpt = 'Aucun';
+                break;
+            }
+        }
+        return typeCpt ; 
+    }
+
 }
 
