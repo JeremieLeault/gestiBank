@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ConseillerService } from '../../conseiller/conseiller.service';
 
 @Component({
   selector: 'app-gesti-affect',
@@ -8,13 +7,9 @@ import { ConseillerService } from '../../conseiller/conseiller.service';
 })
 export class GestiAffectComponent implements OnInit {
 
-  conseillerList;
-  constructor( private conseillerService : ConseillerService) { }
+  constructor() { }
 
   ngOnInit() {
-
-    this.conseillerList = this.conseillerService.getAll();
-    console.log(this.conseillerList);
   }
 
 }
