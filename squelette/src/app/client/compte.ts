@@ -65,15 +65,15 @@ export class Compte {
     public modifType(type: Number):string {
         var typeCpt : string ; 
                 switch (type) {
-            case '1': {
+            case 1: {
                 typeCpt = 'Compte simple';
                 break;
             }
-            case '2': {
+            case 2: {
                 typeCpt = 'Compte avec autorisation de découvert';
                 break;
             }
-            case '3': {
+            case 3: {
                 typeCpt = 'Compte rénuméré';
                 break;
             }
