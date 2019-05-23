@@ -25,12 +25,12 @@ public class CompteServiceImpl implements ICompteService{
 		return dao.findAllComptes();
 	}
 
-	public void deleteCompteByNum(int num) {
-		dao.deleteCompteByNum(num);
+	public void deleteCompteByNum(int numCompte) {
+		dao.deleteCompteByNum(numCompte);
 	}
 
-	public Compte findCompteByNum(int num) {
-		return dao.findCompteByNum(num);
+	public Compte findCompteByNum(int numCompte) {
+		return dao.findCompteByNum(numCompte);
 	}
 
 	public void updateCompte(Compte compte) {

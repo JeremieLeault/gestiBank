@@ -3,16 +3,20 @@ package com.wha.spring.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Calendar;
+import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
@@ -64,8 +68,8 @@ public class Client implements Serializable {
 //	@OneToMany(cascade = { CascadeType.ALL})
 //	private Collection<Demande> demande;
 
-	// @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	// private Collection<Compte> compte;
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+	 private Collection<Compte> compte;
 
 //	@OneToOne(cascade = { CascadeType.ALL })
 //	private Address address;

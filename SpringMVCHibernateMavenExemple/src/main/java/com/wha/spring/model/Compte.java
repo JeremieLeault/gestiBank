@@ -30,7 +30,7 @@ public class Compte {
 	private int idCompte;
 
 	@Column(name = "NUM_COMPTE", nullable = false)
-	private String numCompte;
+	private int numCompte;
 
 	@Column(name = "TYPE_COMPTE", nullable = false)
 	private String typeCompte;
@@ -46,11 +46,11 @@ public class Compte {
 		this.idCompte = idCompte;
 	}
 
-	public String getNumCompte() {
+	public int getNumCompte() {
 		return numCompte;
 	}
 
-	public void setNumCompte(String numCompte) {
+	public void setNumCompte(int numCompte) {
 		this.numCompte = numCompte;
 	}
 
