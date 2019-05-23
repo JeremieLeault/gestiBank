@@ -6,9 +6,9 @@ import { Compte } from './compte';
 })
 export class CompteService {
   fakeComptes = [
-      new Compte(0,0,"1",250,5000,120),
-      new Compte(1,1,"2",500,10000,502),
-      new Compte(2,1,"3",800,15000,845)
+      new Compte(0,0,1,250,5000,120),
+      new Compte(1,1,2,500,10000,502),
+      new Compte(2,1,3,800,15000,845)
     ];
   constructor() { }
   
