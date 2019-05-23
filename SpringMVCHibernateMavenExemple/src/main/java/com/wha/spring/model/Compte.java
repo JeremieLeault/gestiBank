@@ -26,10 +26,7 @@ import javax.persistence.Table;
 public class Compte {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idCompte;
-
-	@Column(name = "NUM_COMPTE", nullable = false)
+	@Column(name = "NUM_COMPTE", unique = true, nullable = false)
 	private int numCompte;
 
 	@Column(name = "TYPE_COMPTE", nullable = false)
@@ -38,13 +35,7 @@ public class Compte {
 	@Column(name = "SOLDE", nullable = true)
 	private Float solde;
 
-	public int getIdCompte() {
-		return idCompte;
-	}
-
-	public void setIdCompte(int idCompte) {
-		this.idCompte = idCompte;
-	}
+	
 
 	public int getNumCompte() {
 		return numCompte;
@@ -72,7 +63,7 @@ public class Compte {
 
 	@Override
 	public String toString() {
-		return "Compte [idCompte=" + idCompte + ", numCompte=" + numCompte + ", typeCompte=" + typeCompte + ", solde="
+		return "Compte [numCompte=" + numCompte + ", typeCompte=" + typeCompte + ", solde="
 				+ solde + "]";
 	}
 	
