@@ -17,7 +17,6 @@ import javax.persistence.IdClass;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
@@ -72,8 +71,8 @@ public class Client implements Serializable {
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	 private Collection<Compte> compte;
 
-	@OneToOne(cascade = { CascadeType.ALL })
-	private Address address;
+//	@OneToOne(cascade = { CascadeType.ALL })
+//	private Address address;
 
 	public int getId_client() {
 		return id_client;
@@ -147,31 +146,20 @@ public class Client implements Serializable {
 		this.salaire = salaire;
 	}
 
-	public Address getAddress() {
-		return address;
-	}
+//	public Address getAddress() {
+//		return address;
+//	}
+//
+//	public void setAddress(Address address) {
+//		this.address = address;
+//	}
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	@Override
-	public String toString() {
-		return "Client [id_client=" + id_client + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance="
-				+ dateNaissance + ", dateDemande=" + dateDemande + ", email=" + email + ", tel=" + tel
-				+ ", situation_perso=" + situation_perso + ", salaire=" + salaire + ", compte=" + compte + ", address="
-				+ address + "]";
-	}
-
-	public Collection<Compte> getCompte() {
-		return compte;
-	}
-
-	public void setCompte(Collection<Compte> compte) {
-		this.compte = compte;
-	}
-
-	
+//	@Override
+//	public String toString() {
+//		return "ClientKey [id_client=" + id_client + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance="
+//				+ dateNaissance + ", dateDemande=" + dateDemande + ", email=" + email + ", tel=" + tel
+//				+ ", situation_perso=" + situation_perso + ", salaire=" + salaire + ", address=" + address + "]";
+//	}
 
 	
 
