@@ -71,6 +71,9 @@ public class Client implements Serializable {
 
 	@OneToOne(cascade = { CascadeType.ALL })
 	private Address address;
+	
+	@OneToMany(cascade = { CascadeType.ALL}, fetch = FetchType.EAGER)
+	private Collection<Demande> demande;
 
 	public int getId_client() {
 		return id_client;
