@@ -28,6 +28,16 @@ import javax.persistence.Table;
 @Table(name = "COMPTE")
 public class Compte {
 
+	public Compte() {
+	}
+
+	public Compte(int numCompte, String typeCompte, Float solde, Collection<Transaction> transaction) {
+		this.numCompte = numCompte;
+		this.typeCompte = typeCompte;
+		this.solde = solde;
+		this.transaction = transaction;
+	}
+
 	@Id
 	@Column(name = "NUM_COMPTE", unique = true, nullable = false)
 	private int numCompte;
