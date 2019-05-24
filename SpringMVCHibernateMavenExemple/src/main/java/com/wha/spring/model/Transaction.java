@@ -2,12 +2,16 @@ package com.wha.spring.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -37,6 +41,9 @@ public class Transaction implements Serializable{
 	@Column(name = "LIBELLE")
 	private String libelle;
 
+	@ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+	private Compte compte;
+	
 	public int getId_transaction() {
 		return id_transaction;
 	}
@@ -80,7 +87,15 @@ public class Transaction implements Serializable{
 	@Override
 	public String toString() {
 		return "Transaction [id_transaction=" + id_transaction + ", montant=" + montant + ", type=" + type
-				+ ", dateTransaction=" + dateTransaction + ", libelle=" + libelle + "]";
+				+ ", dateTransaction=" + dateTransaction + ", libelle=" + libelle + ", Compte=" + compte + "]";
+	}
+
+	public Compte getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
 	}
 	
 }

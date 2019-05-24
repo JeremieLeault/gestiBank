@@ -77,8 +77,8 @@ public class Compte {
 
 	@Override
 	public String toString() {
-		return "Compte [numCompte=" + numCompte + ", typeCompte=" + typeCompte + ", solde="
-				+ solde + "]";
+		return "Compte [numCompte=" + numCompte + ", typeCompte=" + typeCompte + ", solde=" + solde + ", transaction="
+				+ transaction + "]";
 	}
 
 	public Collection<Transaction> getTransaction() {
