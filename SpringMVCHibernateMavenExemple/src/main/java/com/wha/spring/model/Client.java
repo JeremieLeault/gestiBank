@@ -17,19 +17,17 @@ import javax.persistence.IdClass;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 
 @Entity
-@NamedQueries({
-	@NamedQuery( name = "findAllClients", query = "SELECT c from Client c"),
-	@NamedQuery( name = "findClientById", query = "SELECT c from Client c WHERE c.id_client=:id_client")
-})
+@NamedQueries({ @NamedQuery(name = "findAllClients", query = "SELECT c from Client c"),
+		@NamedQuery(name = "findClientById", query = "SELECT c from Client c WHERE c.id_client=:id_client") })
 @Table(name = "CLIENT")
 public class Client implements Serializable {
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -69,10 +67,10 @@ public class Client implements Serializable {
 //	private Collection<Demande> demande;
 
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	 private Collection<Compte> compte;
+	private Collection<Compte> compte;
 
-//	@OneToOne(cascade = { CascadeType.ALL })
-//	private Address address;
+	@OneToOne(cascade = { CascadeType.ALL })
+	private Address address;
 
 	public int getId_client() {
 		return id_client;
@@ -146,21 +144,19 @@ public class Client implements Serializable {
 		this.salaire = salaire;
 	}
 
-//	public Address getAddress() {
-//		return address;
-//	}
-//
-//	public void setAddress(Address address) {
-//		this.address = address;
-//	}
+	public Address getAddress() {
+		return address;
+	}
 
-//	@Override
-//	public String toString() {
-//		return "ClientKey [id_client=" + id_client + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance="
-//				+ dateNaissance + ", dateDemande=" + dateDemande + ", email=" + email + ", tel=" + tel
-//				+ ", situation_perso=" + situation_perso + ", salaire=" + salaire + ", address=" + address + "]";
-//	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
-	
+	@Override
+	public String toString() {
+		return "ClientKey [id_client=" + id_client + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance="
+				+ dateNaissance + ", dateDemande=" + dateDemande + ", email=" + email + ", tel=" + tel
+				+ ", situation_perso=" + situation_perso + ", salaire=" + salaire + ", address=" + address + "]";
+	}
 
 }
