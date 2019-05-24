@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Client } from '../../../client/client';
 import { ClientService } from '../../../client/client.service';
-import { CompteService } from 'src/app/client/compte.service';
+import { CompteService } from '../../../client/compte.service';
+
 
 @Component({
     selector: 'app-client-search',
@@ -12,7 +13,7 @@ import { CompteService } from 'src/app/client/compte.service';
 })
 export class ClientSearchComponent implements OnInit {
 
-    private id: Number;
+    private id: string;
     client: Client;
     situationmatri: string;
     nbEnfants: any;
@@ -29,10 +30,10 @@ export class ClientSearchComponent implements OnInit {
             this.id = params.id;
         });
 
-        this.client = this.clientService.getClient(this.id);
+        this.clientService.getClient(this.id).subscribe(data => this.client = data);
 
 
-        switch (this.client.situation) {
+        switch (this.client.getSituation()) {
             case '1': {
                 this.situationmatri = 'Célibataire';
                 break;
@@ -67,9 +68,9 @@ export class ClientSearchComponent implements OnInit {
             this.salaireClient = 'Non renseigné';
         } else { this.salaireClient = this.client.salaire + ' €' }
 
-        if (this.client.naissance == null) {
+        if (this.client.getNaissance() == null) {
             this.naissanceClient = 'Non renseigné';
-        } else { this.naissanceClient = this.client.naissance; }
+        } else { this.naissanceClient = this.client.getNaissance; }
 
         this.listeCompte = this.compteService.getAll();
 
