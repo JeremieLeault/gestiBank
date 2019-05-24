@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.wha.spring.model.Client;
 
-public interface ClientService {
+public interface IClientService {
 
 	void saveClient(Client client);
 

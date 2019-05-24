@@ -6,11 +6,11 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import com.wha.spring.idao.ConseillerDao;
+import com.wha.spring.idao.IConseillerDao;
 import com.wha.spring.model.Conseiller;
 
 @Repository("conseillerDao")
-public class ConseillerDaoImpl extends AbstractDao implements ConseillerDao {
+public class ConseillerDaoImpl extends AbstractDao implements IConseillerDao {
 
 	public void saveConseiller(Conseiller conseiller) {
 		persist(conseiller);

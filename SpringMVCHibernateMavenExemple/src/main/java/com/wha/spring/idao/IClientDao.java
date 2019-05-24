@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.wha.spring.model.Client;
 
-public interface ClientDao {
+public interface IClientDao {
 	
 	public void saveClient(Client client);
 

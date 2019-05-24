@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wha.spring.iservice.ClientService;
+import com.wha.spring.iservice.IClientService;
 import com.wha.spring.model.Client;
 import com.wha.spring.model.Conseiller;
 
@@ -20,7 +20,7 @@ import com.wha.spring.model.Conseiller;
 public class ClientControllerRestService {
 	
 	@Autowired
-	ClientService service;
+	IClientService service;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String helloWorld() {

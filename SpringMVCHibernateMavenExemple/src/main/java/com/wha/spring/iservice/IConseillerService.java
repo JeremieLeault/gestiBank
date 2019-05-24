@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.wha.spring.model.Conseiller;
 
-public interface ConseillerService {
+public interface IConseillerService {
 
 	void saveConseiller(Conseiller conseiller);
 

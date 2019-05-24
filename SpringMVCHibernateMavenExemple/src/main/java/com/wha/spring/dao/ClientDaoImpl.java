@@ -6,11 +6,11 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import com.wha.spring.idao.ClientDao;
+import com.wha.spring.idao.IClientDao;
 import com.wha.spring.model.Client;
 
 @Repository("clientDao")
-public class ClientDaoImpl extends AbstractDao implements ClientDao {
+public class ClientDaoImpl extends AbstractDao implements IClientDao {
 
 	public void saveClient(Client client) {
 		persist(client);

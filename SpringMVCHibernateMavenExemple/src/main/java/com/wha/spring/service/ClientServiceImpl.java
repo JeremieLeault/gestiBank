@@ -6,16 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.wha.spring.idao.ClientDao;
-import com.wha.spring.iservice.ClientService;
+import com.wha.spring.idao.IClientDao;
+import com.wha.spring.iservice.IClientService;
 import com.wha.spring.model.Client;
 
 @Service("clientService")
 @Transactional
-public class ClientServiceImpl implements ClientService{
+public class ClientServiceImpl implements IClientService{
 
 	@Autowired
-	private ClientDao dao;
+	private IClientDao dao;
 	
 	
 	public void saveClient(Client client) {
