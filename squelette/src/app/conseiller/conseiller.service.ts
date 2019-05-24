@@ -16,10 +16,8 @@ private fakeConseillers : any = [
   url:string = "http://localhost:8080/BackEnd/conseiller/";
 
   constructor(private http: HttpClient) { }
-  getAll(){
-    this.http.get<Conseiller[]>(this.url + "getAll").subscribe(data => this.conseillerList = data);
-    console.log(this.conseillerList);
-    return this.conseillerList;
+  getAll():Observable<Conseiller[]>{
+    return this.http.get<Conseiller[]>(this.url + "getAll");
     }
  
   addConseiller(conseiller){
@@ -37,9 +35,8 @@ private fakeConseillers : any = [
     console.log(this.fakeConseillers);
   }
 
-  searchConseiller(search){
-
-    this.http.get<Conseiller>(this.url + search).subscribe(data => this.conseiller = data);
-    return this.conseiller;
+  searchConseiller(search):Observable<Conseiller>{
+    
+    return this.http.get<Conseiller>(this.url + search);
   }
 }

@@ -15,7 +15,8 @@ export class SearchAdminComponent implements OnInit {
   constructor(private conseillerService : ConseillerService) { }
 
   ngOnInit() {
-    this.listConseiller = this.conseillerService.getAll();
+    this.conseillerService.getAll().subscribe(data => this.listConseiller = data);
+    console.log(this.listConseiller);
   }
 
   doSearch(){

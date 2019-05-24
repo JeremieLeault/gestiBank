@@ -13,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientSearchComponent } from './search-conseiller/client-search/client-search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConseillerService } from './conseiller.service';
+import { ClientService } from '../client/client.service';
 
 const conseillerRoutes: Routes = [
 {path : '', component: DashConseillerComponent, },
@@ -42,7 +43,8 @@ const conseillerRoutes: Routes = [
     HttpClientModule
   ],
   providers: [
-    ConseillerService
+    ConseillerService,
+    ClientService
   ]
 })
 export class ConseillerModule { }

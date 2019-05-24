@@ -14,7 +14,7 @@ import { CompteService } from '../../../client/compte.service';
 export class ClientSearchComponent implements OnInit {
 
     private id: string;
-    client: Client;
+    client;
     situationmatri: string;
     nbEnfants: any;
     salaireClient: any;
@@ -29,9 +29,10 @@ export class ClientSearchComponent implements OnInit {
         this.route.params.subscribe(params => {
             this.id = params.id;
         });
+        console.log(this.id);
 
         this.clientService.getClient(this.id).subscribe(data => this.client = data);
-
+        console.log(this.client);
 
         switch (this.client.getSituation()) {
             case '1': {
@@ -60,7 +61,8 @@ export class ClientSearchComponent implements OnInit {
             }
         }
 
-        if (this.client.nombreEnfant == null) {
+
+        if (this.client.getNombreEnfant() == null) {
             this.nbEnfants = 'Non renseigné';
         } else { this.nbEnfants = this.client.nombreEnfant + ' enfant(s)' }
 

@@ -13,7 +13,7 @@ export class ViewProfilClientComponent implements OnInit {
   constructor(private clientserv: ClientService) { }
 
   ngOnInit() {
-   this.clientserv.getClient("0").subscribe(data => this.client = data) ; 
+   this.clientserv.getClient("1").subscribe(data => this.client = data) ; 
       console.log(this.client) ; 
   }
 

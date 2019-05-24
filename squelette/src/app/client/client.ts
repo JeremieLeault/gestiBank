@@ -1,6 +1,6 @@
 export class Client {
     
-    id_client: string;
+    id_client: Number;
     motDePasse: string;
     nom: string;
     prenom: string;
@@ -17,7 +17,7 @@ export class Client {
     typeCpt: string;
     dateDemande:Date;
 
-    constructor(id_client, motDePasse, nom, prenom, email, telephone, adresse, codePostal, ville, situation_perso, nombreEnfant, conseiller,dateNaissance) {
+    constructor(id_client:Number, motDePasse:string, nom:string, prenom:string, email:string, telephone:string, adresse, codePostal, ville, situation_perso:string, nombreEnfant, conseiller, dateNaissance:Date,salaire:Number) {
         this.id_client = id_client;
         this.motDePasse = motDePasse;
         this.nom = nom;
@@ -29,11 +29,11 @@ export class Client {
         this.ville = ville;
         this.situation_perso = situation_perso ;
         this.conseiller = conseiller;
-        this.salaire = 5000 ;
+        this.salaire = salaire ;
         this.dateNaissance = dateNaissance;
     }
 
-    public getId(): string {
+    public getId(): Number {
         return this.id_client ;
     }
      public getNom(): string {

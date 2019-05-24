@@ -3,9 +3,7 @@ import { Client } from './client';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ClientService {
 
   //fakeClient = [
@@ -21,6 +19,7 @@ getAll() :Observable<Client[]>{
 }
 
 getClient(id:string): Observable<Client>{
+  console.log(this.url + id);
   return this.http.get<Client>(this.url + id);
 
 }

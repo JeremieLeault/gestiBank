@@ -10,30 +10,28 @@ import { Client } from '../../client/client';
 export class SearchConseillerComponent implements OnInit {
 
 
-  private listClient: Client[];
-  private listClientAffiche: Client[];
+  private listClientAffiche;
   private search: string = "";
   constructor(private clientService: ClientService) { }
 
   ngOnInit() {
-    this.clientService.getAll().subscribe(data => this.listClient = data);
-    console.log(this.listClient);
-    this.listClientAffiche = this.listClient;
-    console.log(this.listClientAffiche);
+    this.clientService.getAll().subscribe(data => this.listClientAffiche = data);
+    
   }
 
-  doSearch() {
-    var tempList: Array<Client> = [];
-    console.log(this.search);
-    if (this.search == "") {
-      tempList = this.listClient;
-    } else {
-      for (var i = 0; i < this.listClient.length; i++) {
-        if (this.listClient[i].getNom().indexOf(this.search) == 0) {
-            tempList.push(this.listClient[i]);
-        }
-      }
-    }
-    this.listClientAffiche = tempList;
+  doSearch(search) {
+    console.log(this.listClientAffiche);
+//    var tempList: Array<Client> = [];
+//    console.log(this.search);
+//    if (this.search == "") {
+//      tempList = this.listClient;
+//    } else {
+//      for (var i = 0; i < this.listClient.length; i++) {
+//        if (this.listClient[i].getNom().indexOf(this.search) == 0) {
+//            tempList.push(this.listClient[i]);
+//        }
+//      }
+//    }
+//    this.listClientAffiche = tempList;
   }
 }
