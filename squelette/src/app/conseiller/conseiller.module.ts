@@ -11,6 +11,8 @@ import { MenuConseillerComponent } from './menu-conseiller/menu-conseiller.compo
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientSearchComponent } from './search-conseiller/client-search/client-search.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ConseillerService } from './conseiller.service';
 
 const conseillerRoutes: Routes = [
 {path : '', component: DashConseillerComponent, },
@@ -36,7 +38,11 @@ const conseillerRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(conseillerRoutes)
+    RouterModule.forChild(conseillerRoutes),
+    HttpClientModule
+  ],
+  providers: [
+    ConseillerService
   ]
 })
 export class ConseillerModule { }

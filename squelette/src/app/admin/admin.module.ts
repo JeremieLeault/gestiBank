@@ -11,6 +11,8 @@ import { AjoutConseillerComponent } from './ajout-conseiller/ajout-conseiller.co
 import { ListConseillerComponent } from './list-conseiller/list-conseiller.component';
 import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ConseillerService } from '../conseiller/conseiller.service';
 
 const adminRoutes: Routes = [
 
@@ -51,7 +53,11 @@ const adminRoutes: Routes = [
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule.forChild(adminRoutes)
+        RouterModule.forChild(adminRoutes),
+        HttpClientModule
+    ],
+    providers:[
+        ConseillerService
     ]
 })
 export class AdminModule { }

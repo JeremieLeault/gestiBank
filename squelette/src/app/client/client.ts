@@ -1,6 +1,6 @@
 export class Client {
     
-    id: string;
+    id_client: string;
     motDePasse: string;
     nom: string;
     prenom: string;
@@ -9,15 +9,16 @@ export class Client {
     adresse: string;
     codePostal: Number;
     ville: string;
-    situation: string;
+    situation_perso: string;
     nombreEnfant: Number;
     conseiller: Number;
     salaire: Number;
-    naissance: string;
+    dateNaissance: Date;
     typeCpt: string;
+    dateDemande:Date;
 
-    constructor(id, motDePasse, nom, prenom, email, telephone, adresse, codePostal, ville, situation, nombreEnfant, conseiller) {
-        this.id = id;
+    constructor(id_client, motDePasse, nom, prenom, email, telephone, adresse, codePostal, ville, situation_perso, nombreEnfant, conseiller,dateNaissance) {
+        this.id_client = id_client;
         this.motDePasse = motDePasse;
         this.nom = nom;
         this.prenom = prenom;
@@ -26,14 +27,14 @@ export class Client {
         this.adresse = adresse;
         this.codePostal = codePostal;
         this.ville = ville;
-        this.situation = situation ;
+        this.situation_perso = situation_perso ;
         this.conseiller = conseiller;
         this.salaire = 5000 ;
-        this.naissance = "2010-08-08";
+        this.dateNaissance = dateNaissance;
     }
 
     public getId(): string {
-        return this.id ;
+        return this.id_client ;
     }
      public getNom(): string {
         return this.nom ;
@@ -51,8 +52,8 @@ export class Client {
         return this.telephone ;
     }
 
-    public getNaissance(): string {
-        return this.naissance ;
+    public getNaissance(): Date {
+        return this.dateNaissance ;
     }
 
     public getAdresse(): string {
@@ -68,7 +69,7 @@ export class Client {
     }
 
     public getSituation(): string {
-        return this.situation ;
+        return this.situation_perso ;
     }
 
     public getSalaire(): Number {
@@ -89,5 +90,8 @@ export class Client {
 
     public setNom(nom: string) {
         this.nom = nom ;
+    }
+    public getDateDemande(): Date {
+        return  this.dateDemande;
     }
 }

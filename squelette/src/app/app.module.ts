@@ -12,6 +12,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ClientModule } from './client/client.module';
 import { ConseillerModule } from './conseiller/conseiller.module';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     AdminModule,
     ClientModule,
-    ConseillerModule
+    ConseillerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

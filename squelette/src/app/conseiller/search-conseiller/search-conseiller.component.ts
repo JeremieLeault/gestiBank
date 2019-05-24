@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../client/client.service';
+import { Client } from '../../client/client';
 
 @Component({
   selector: 'app-search-conseiller',
@@ -9,21 +10,30 @@ import { ClientService } from '../../client/client.service';
 export class SearchConseillerComponent implements OnInit {
 
 
-  private listClient;
-  private search:string ="";
-  constructor(private clientService : ClientService) { }
+  private listClient: Client[];
+  private listClientAffiche: Client[];
+  private search: string = "";
+  constructor(private clientService: ClientService) { }
 
   ngOnInit() {
-    this.listClient = this.clientService.getAll();
+    this.clientService.getAll().subscribe(data => this.listClient = data);
     console.log(this.listClient);
+    this.listClientAffiche = this.listClient;
+    console.log(this.listClientAffiche);
   }
 
-  doSearch(){
+  doSearch() {
+    var tempList: Array<Client> = [];
     console.log(this.search);
-    if (this.search == ""){
-      this.listClient = this.clientService.getAll();
-    }else{
-      this.listClient = this.clientService.searchConseiller(this.search);
+    if (this.search == "") {
+      tempList = this.listClient;
+    } else {
+      for (var i = 0; i < this.listClient.length; i++) {
+        if (this.listClient[i].getNom().indexOf(this.search) == 0) {
+            tempList.push(this.listClient[i]);
+        }
+      }
     }
+    this.listClientAffiche = tempList;
   }
 }
