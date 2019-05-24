@@ -37,5 +37,10 @@ public class CompteServiceImpl implements ICompteService{
 		dao.updateCompte(compte);
 	}
 
+	public Float findSoldeByNum(int num) {
+		// TODO Auto-generated method stub
+		return dao.findSoldeByNum(num);
+	}
+
 	
 }

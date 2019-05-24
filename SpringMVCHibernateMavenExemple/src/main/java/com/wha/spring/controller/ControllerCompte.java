@@ -34,6 +34,13 @@ public class ControllerCompte {
 		return new ResponseEntity<Compte>(resultat, HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/{num}/solde")
+	public Float getSolde(@PathVariable int num) {
+		Float resultat = compteService.findSoldeByNum(num);
+		System.out.println(resultat);
+		return resultat;
+	}
+	
 	@RequestMapping(value = "/getAll")
 	public ResponseEntity<List<Compte>> getAllComptes() {
 		List<Compte> resultat = compteService.findAllComptes();

@@ -21,7 +21,8 @@ import javax.persistence.Table;
 
 @NamedQueries({
 	@NamedQuery( name = "findAllComptes", query = "SELECT co from Compte co"),
-	@NamedQuery( name = "findCompteByNum", query = "SELECT co from Compte co WHERE co.numCompte=:numCompte")
+	@NamedQuery( name = "findCompteByNum", query = "SELECT co from Compte co WHERE co.numCompte=:numCompte"),
+	@NamedQuery( name = "findSoldeByNum", query = "SELECT co.solde from Compte co WHERE co.numCompte=:numCompte")
 })
 
 @Table(name = "COMPTE")

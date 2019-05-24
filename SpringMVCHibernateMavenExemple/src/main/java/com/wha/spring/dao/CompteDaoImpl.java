@@ -35,6 +35,13 @@ public class CompteDaoImpl extends AbstractDao implements ICompteDao{
 	public void updateCompte(Compte compte) {
 		em.merge(compte);
 	}
+
+	public Float findSoldeByNum(int numCompte) {
+		Query q = em.createNamedQuery("findSoldeByNum");
+		q.setParameter("numCompte", numCompte);
+		Float res = (Float) q.getSingleResult();
+		return res;
+	}
 	
 	
 

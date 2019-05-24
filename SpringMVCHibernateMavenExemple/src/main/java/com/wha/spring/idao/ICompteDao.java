@@ -16,4 +16,6 @@ public interface ICompteDao {
 	
 	public void updateCompte(Compte compte);
 
+	Float findSoldeByNum(int num);
+
 }
