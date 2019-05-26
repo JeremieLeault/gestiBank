@@ -62,8 +62,10 @@ body {
   line-height: $line-height-base;
   color: $body-color;
   text-align: left; // 3
-  background-image: url("src/assets/img/Background01.png");
-  background-size: 100%;
+  background-image: url("src/assets/img/Background02.png");
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 // Suppress the focus outline on elements that cannot be accessed via keyboard.

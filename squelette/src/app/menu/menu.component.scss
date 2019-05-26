@@ -1,7 +1,8 @@
 $topnav-background-color: #3FB0EC;
 :host {
     .navbar {
-
+        position: relative;
+        overflow: hidden;
         background-color: $topnav-background-color;
         .navbar-brand {
             color: black;
@@ -10,7 +11,6 @@ $topnav-background-color: #3FB0EC;
 
         }
         .nav-item > a {
-            margin-top: 0px;
             color: Black;
             font-family: 'Noticia Text', serif;
             font-size: 18px;

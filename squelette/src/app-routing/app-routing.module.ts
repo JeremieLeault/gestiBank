@@ -14,8 +14,9 @@ const routes: Routes = [
     { path: 'form', component: FormComponent },
     { path: 'login', component: LoginComponent},
     {
-        path: 'dash-admin', component: DashAdminComponent
-        //loadChildren: '../app/admin/admin.module#AdminModule'
+        path: 'dash-admin', 
+        //component: DashAdminComponent
+        loadChildren: 'src/app/admin/admin.module#AdminModule'
     },
     { path: 'dash-conseiller', component: DashConseillerComponent },
     { path: 'dash-client', loadChildren: 'src/app/client/client.module#ClientModule' },

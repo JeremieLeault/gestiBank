@@ -14,16 +14,19 @@ import { ClientSearchComponent } from './search-conseiller/client-search/client-
 import { HttpClientModule } from '@angular/common/http';
 import { ConseillerService } from './conseiller.service';
 import { ClientService } from '../client/client.service';
+import { ConseillerComponent } from './conseiller.component';
 
 const conseillerRoutes: Routes = [
-{path : '', component: DashConseillerComponent, },
-{path : 'dash-conseiller/validation-affect', component: ValidationAffectComponent},
-{path : 'dash-conseiller/demande-compte', component: DemandeCompteComponent},
-{path : 'dash-conseiller/demande-chequier', component: DemandeChequierComponent},
-{path : 'dash-conseiller/search-conseiller', component: SearchConseillerComponent},
-{path : 'dash-conseiller/mail-conseiller', component: MailConseillerComponent},
-{path : 'dash-conseiller/search-conseiller/view-client/:id', component: ClientSearchComponent}
-
+  { path: '', component: ConseillerComponent,
+  children: [
+    { path: 'dash-conseiller/validation-affect', component: ValidationAffectComponent },
+    { path: 'dash-conseiller/demande-compte', component: DemandeCompteComponent },
+    { path: 'dash-conseiller/demande-chequier', component: DemandeChequierComponent },
+    { path: 'dash-conseiller/search-conseiller', component: SearchConseillerComponent },
+    { path: 'dash-conseiller/mail-conseiller', component: MailConseillerComponent },
+    { path: 'dash-conseiller/search-conseiller/view-client/:id', component: ClientSearchComponent }
+  ]
+  }
 ];
 
 @NgModule({
@@ -35,7 +38,8 @@ const conseillerRoutes: Routes = [
     DemandeChequierComponent,
     DemandeCompteComponent,
     MenuConseillerComponent,
-    ClientSearchComponent],
+    ClientSearchComponent,
+    ConseillerComponent],
   imports: [
     CommonModule,
     FormsModule,

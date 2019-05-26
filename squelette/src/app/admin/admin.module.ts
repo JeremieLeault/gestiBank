@@ -13,31 +13,26 @@ import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConseillerService } from '../conseiller/conseiller.service';
+import { AdminComponent } from './admin.component';
 
 const adminRoutes: Routes = [
 
     {
         path: '',
-        component: DashAdminComponent,
+        component: AdminComponent,
+        children: [
+            { path: 'dash-admin/ajout-conseiller', component: AjoutConseillerComponent },
+            { path: 'dash-admin/edit-conseiller', component: EditConseillerComponent },
+            { path: 'dash-admin/mail-admin', component: MailAdminComponent },
+            { path: 'dash-admin/gesti-affect', component: GestiAffectComponent },
+            { path: 'dash-admin/gesti-conseiller', component: GestiConseillerComponent },
+            { path: 'dash-admin/search-admin', component: SearchAdminComponent }
+        ]
     },
     //  {
     //   path: 'dash-admin/list-conseiller',
     //   component: ListConseillerComponent
     // },
-    {
-        path: 'dash-admin/ajout-conseiller',
-        component: AjoutConseillerComponent
-    },
-    {
-        path: 'dash-admin/edit-conseiller',
-        component: EditConseillerComponent
-    },
-    { path: 'dash-admin/mail-admin', component: MailAdminComponent },
-    { path: 'dash-admin/gesti-affect', component: GestiAffectComponent },
-    { path: 'dash-admin/gesti-conseiller', component: GestiConseillerComponent },
-    { path: 'dash-admin/search-admin', component: SearchAdminComponent }
-
-
 ];
 
 @NgModule({
@@ -49,14 +44,15 @@ const adminRoutes: Routes = [
         MenuAdminComponent,
         AjoutConseillerComponent,
         ListConseillerComponent,
-        EditConseillerComponent],
+        EditConseillerComponent,
+        AdminComponent],
     imports: [
         CommonModule,
         FormsModule,
         RouterModule.forChild(adminRoutes),
         HttpClientModule
     ],
-    providers:[
+    providers: [
         ConseillerService
     ]
 })
