@@ -34,10 +34,10 @@ public class DemandeControllerRestService {
 		return new ResponseEntity<Demande>(resultat, HttpStatus.OK);
 	}
 	@RequestMapping(value = "/client/{id_client}")
-	public ResponseEntity<Demande> getDemandeByClient(@PathVariable int id_client) {
-		Demande resultat = service.findByClient(id_client);
+	public ResponseEntity<List<Demande>> getDemandeByClient(@PathVariable int id_client) {
+		List<Demande> resultat = service.findByClient(id_client);
 		System.out.println(resultat);
-		return new ResponseEntity<Demande>(resultat, HttpStatus.OK);
+		return new ResponseEntity<List<Demande>>(resultat, HttpStatus.OK);
 	}
 	@RequestMapping(value = "/date/{date_demande}")
 	public ResponseEntity<Demande> getDemandeById(@PathVariable Calendar date_demande) {
