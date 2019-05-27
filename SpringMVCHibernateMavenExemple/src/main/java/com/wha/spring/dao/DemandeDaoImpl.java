@@ -29,10 +29,10 @@ public class DemandeDaoImpl extends AbstractDao implements IDemandeDao {
 		persist(dmd);
 	}
 
-	public Demande findByClient(int id_client) {
+	public List<Demande> findByClient(int id_client) {
 		Query q = em.createNamedQuery("findDemandeByClient");
-		q.setParameter("client_id_client", id_client);
-		Demande res = (Demande) q.getSingleResult();
+		q.setParameter("id_client", id_client);
+		List<Demande> res = q.getResultList();
 		return res;
 	}
 

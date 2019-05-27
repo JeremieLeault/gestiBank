@@ -31,7 +31,7 @@ public class DemandeServiceImpl implements IDemandeService {
 		dao.saveDemande(dmd);
 	}
 
-	public Demande findByClient(int id_client) {
+	public List<Demande> findByClient(int id_client) {
 		// TODO Auto-generated method stub
 		return dao.findByClient(id_client);
 	}
