@@ -37,4 +37,11 @@ public class ClientDaoImpl extends AbstractDao implements IClientDao {
 		// TODO Auto-generated method stub
 		em.merge(client);
 	}
+
+	public List<Client> findAllClientsByConseiller(int mle) {
+		Query q = em.createNamedQuery("findAllClientsByConseiller");
+		q.setParameter("mle", mle);
+		List<Client> res = q.getResultList();
+		return res;
+	}
 }
