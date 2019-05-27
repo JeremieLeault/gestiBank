@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wha.spring.idao.IDemandeDao;
 import com.wha.spring.iservice.IDemandeService;
 import com.wha.spring.model.Demande;
 
@@ -16,7 +17,7 @@ import com.wha.spring.model.Demande;
 public class DemandeServiceImpl implements IDemandeService {
 
 	@Autowired
-	private IDemandeService dao;
+	private IDemandeDao dao;
 	
 	public Demande findById(int id_demande) {
 		return dao.findById(id_demande);

@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -16,13 +18,14 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "findDemandeById", query = "SELECT d from Demande d WHERE d.id_demande=:id_demande"),
-		@NamedQuery(name = "findDemandeByClient", query = "SELECT d from Demande d WHERE d.client_id_client=:client_id_client"),
-		@NamedQuery(name = "findDemandeByDate", query = "SELECT d from Demande d WHERE d.date_demande=:date_demande") })
+		@NamedQuery(name = "findDemandeByClient", query = "SELECT d from Demande d WHERE d.client.id_client=:id_client"),
+		@NamedQuery(name = "findDemandeByDate", query = "SELECT d from Demande d WHERE d.date_demande=:date_demande"),
+		@NamedQuery( name = "findAllDemandes", query = "SELECT d from Demande d")})
 @Table(name = "DEMANDE")
 public class Demande {
 
 	@Id
-	@Column(name = "ID_DEMANDE")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_demande;
 
 	@Column(name = "DATE_DEMANDE")

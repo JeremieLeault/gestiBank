@@ -5,9 +5,11 @@ import java.util.List;
 
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
+
 import com.wha.spring.idao.IDemandeDao;
 import com.wha.spring.model.Demande;
-
+@Repository("demandeDaoImpl")
 public class DemandeDaoImpl extends AbstractDao implements IDemandeDao {
 
 	public Demande findById(int id_demande) {
