@@ -15,4 +15,6 @@ public interface IClientService {
 	Client findById(int id_client);
 
 	void updateClient(Client client);
+
+	List<Client> findAllClientsByConseiller(int mle);
 }
