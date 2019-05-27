@@ -33,13 +33,13 @@ public class DemandeControllerRestService {
 		System.out.println(resultat);
 		return new ResponseEntity<Demande>(resultat, HttpStatus.OK);
 	}
-	@RequestMapping(value = "/{id_client}")
+	@RequestMapping(value = "/client/{id_client}")
 	public ResponseEntity<Demande> getDemandeByClient(@PathVariable int id_client) {
 		Demande resultat = service.findByClient(id_client);
 		System.out.println(resultat);
 		return new ResponseEntity<Demande>(resultat, HttpStatus.OK);
 	}
-	@RequestMapping(value = "/{date_demande}")
+	@RequestMapping(value = "/date/{date_demande}")
 	public ResponseEntity<Demande> getDemandeById(@PathVariable Calendar date_demande) {
 		Demande resultat = service.findByDate(date_demande);
 		System.out.println(resultat);
