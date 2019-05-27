@@ -76,6 +76,9 @@ public class Client implements Serializable {
 	@OneToOne(cascade = { CascadeType.ALL})
 	private Conseiller conseiller;
 	
+	@OneToOne(cascade = { CascadeType.ALL})
+	private LoginClient loginClient;
+	
 	public int getId_client() {
 		return id_client;
 	}
@@ -161,6 +164,30 @@ public class Client implements Serializable {
 		return "ClientKey [id_client=" + id_client + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance="
 				+ dateNaissance + ", dateDemande=" + dateDemande + ", email=" + email + ", tel=" + tel
 				+ ", situation_perso=" + situation_perso + ", salaire=" + salaire + ", address=" + address + "]";
+	}
+
+	public Collection<Compte> getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Collection<Compte> compte) {
+		this.compte = compte;
+	}
+
+	public Collection<Demande> getDemande() {
+		return demande;
+	}
+
+	public void setDemande(Collection<Demande> demande) {
+		this.demande = demande;
+	}
+
+	public Conseiller getConseiller() {
+		return conseiller;
+	}
+
+	public void setConseiller(Conseiller conseiller) {
+		this.conseiller = conseiller;
 	}
 
 }

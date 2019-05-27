@@ -54,6 +54,9 @@ public class Conseiller {
 
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	private Collection<Client> client;
+	
+	@OneToOne(cascade = { CascadeType.ALL})
+	private LoginConseiller loginConseiller;
 
 	public Address getAddress() {
 		return address;
