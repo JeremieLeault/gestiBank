@@ -18,4 +18,6 @@ public interface ICompteService {
 
 	Float findSoldeByNum(int num);
 
+	List<Compte> findAllComptesByClient(int id_client);
+
 }

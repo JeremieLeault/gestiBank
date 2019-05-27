@@ -62,9 +62,6 @@ public class Client implements Serializable {
 	// @Column(name = "URL_JUSTIF", nullable = true)
 	// private String url_justif;
 
-// table des demandes clients, comportant les types de compte
-//	@OneToMany(cascade = { CascadeType.ALL})
-//	private Collection<Demande> demande;
 
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	private Collection<Compte> compte;
@@ -75,6 +72,9 @@ public class Client implements Serializable {
 	@OneToMany(cascade = { CascadeType.ALL}, fetch = FetchType.EAGER)
 	private Collection<Demande> demande;
 
+	@OneToOne(cascade = { CascadeType.ALL})
+	private Conseiller conseiller;
+	
 	public int getId_client() {
 		return id_client;
 	}

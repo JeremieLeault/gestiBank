@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -16,6 +17,7 @@ import javax.persistence.Table;
 
 @NamedQueries({
 	@NamedQuery( name = "findAllComptes", query = "SELECT co from Compte co"),
+	@NamedQuery( name = "findAllComptesByClient", query = "SELECT co from Compte co WHERE co.client.id_client=:id_client"),
 	@NamedQuery( name = "findCompteByNum", query = "SELECT co from Compte co WHERE co.numCompte=:numCompte"),
 	@NamedQuery( name = "findSoldeByNum", query = "SELECT co.solde from Compte co WHERE co.numCompte=:numCompte")
 })
@@ -45,6 +47,9 @@ public class Compte {
 
 	@OneToMany(cascade = { CascadeType.ALL}, fetch = FetchType.EAGER )
 	private Collection<Transaction> transaction;
+	
+	@ManyToOne(cascade = { CascadeType.ALL}, fetch = FetchType.EAGER)
+	private Client client;
 
 	public int getNumCompte() {
 		return numCompte;

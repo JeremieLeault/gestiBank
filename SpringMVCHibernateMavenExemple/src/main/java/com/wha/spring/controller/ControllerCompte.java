@@ -48,6 +48,13 @@ public class ControllerCompte {
 		return new ResponseEntity<List<Compte>>(resultat, HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/getAll/{id_client}")
+	public ResponseEntity<List<Compte>> getAllComptesByClient(@PathVariable int id_client) {
+		List<Compte> resultat = compteService.findAllComptesByClient(id_client);
+		System.out.println(resultat);
+		return new ResponseEntity<List<Compte>>(resultat, HttpStatus.OK);
+	}
+	
 	@RequestMapping(value = "/create", method=RequestMethod.POST)
 	public Compte createCompte(@RequestBody Compte cpt) {
 		compteService.saveCompte(cpt);

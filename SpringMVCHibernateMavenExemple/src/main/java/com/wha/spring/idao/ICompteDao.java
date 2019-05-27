@@ -10,6 +10,8 @@ public interface ICompteDao {
 
 	List<Compte> findAllComptes();
 
+	List<Compte> findAllComptesByClient(int id_client);
+	
 	void deleteCompteByNum(int numCompte);
 
 	Compte findCompteByNum(int numCompte);

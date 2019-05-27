@@ -21,6 +21,12 @@ public class CompteDaoImpl extends AbstractDao implements ICompteDao{
 		List<Compte> res = q.getResultList();
 		return res;	
 	}
+	public List<Compte> findAllComptesByClient(int id_client) {
+		Query q = em.createNamedQuery("findAllComptesByClient");
+		q.setParameter("id_client", id_client);
+		List<Compte> res = q.getResultList();
+		return res;	
+	}
 
 	public void deleteCompteByNum(int numCompte) {		
 	}

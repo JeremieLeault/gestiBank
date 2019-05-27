@@ -42,5 +42,9 @@ public class CompteServiceImpl implements ICompteService{
 		return dao.findSoldeByNum(num);
 	}
 
+	public List<Compte> findAllComptesByClient(int id_client) {
+		return dao.findAllComptesByClient(id_client);
+	}
+
 	
 }
