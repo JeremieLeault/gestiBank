@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Client } from '../model/user/client';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable()
 export class ClientService {
@@ -24,6 +29,10 @@ getClient(id:string): Observable<Client>{
 
 }
 
+addClient(client): Observable<any>{
+  console.log(this.url + "create");
+  return this.http.post(this.url + "create", client, httpOptions).pipe();
+}
 //getClient(){
   //return new Client("0", "pwd", "Leault", "Jeremie", "jeremie.leault@gmail.com", "0706060606", "28 rue de GK", 69007, "Lyon", "celibataire", 0, 0)
 //}

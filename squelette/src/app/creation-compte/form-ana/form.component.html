@@ -2,14 +2,14 @@
 
 <p>(Les champs marqués d'un * sont obligatoires)</p>
 
-<form action="" method="post">
+<form #formClient="ngForm" (ngSubmit)="addClient(formClient.value)">
 
     <div class="row">
         <div class="col-lg-4">
 
             <fieldset class="form-group">
                 <label>Nom* : </label>
-                <input class="form-control" type="text" required placeholder="Entrez votre nom">
+                <input class="form-control" type="text"  id="lname"  name ="user_lname" ngModel namerequired placeholder="Entrez votre nom">
             </fieldset>
         </div>
 
@@ -18,7 +18,7 @@
         <div class="col-lg-4">
             <fieldset class="form-group">
                 <label>Prénom* : </label>
-                <input class="form-control" type="text" id="fname" name="user_fname" required
+                <input class="form-control" type="text" id="fname" name="user_fname"  ngModel required
                     placeholder="Entrez votre prenom">
             </fieldset>
         </div>
@@ -29,7 +29,7 @@
 
             <fieldset class="form-group">
                 <label>Email*: </label>
-                <input class="form-control" type="email" id="mail" name="user_mail" required
+                <input class="form-control" type="email" id="mail" name="user_mail" ngModel required
                     placeholder="email@example.com">
             </fieldset>
         </div>
@@ -39,7 +39,7 @@
         <div class="col-lg-4">
             <fieldset class="form-group">
                 <label>Téléphone* : </label>
-                <input class="form-control" type="tel" id="tel" name="user_tel" required placeholder="00.00.00.00.00">
+                <input class="form-control" type="tel" id="tel" name="user_tel" ngModel required placeholder="00.00.00.00.00">
             </fieldset>
         </div>
     </div>
@@ -49,7 +49,7 @@
 
             <fieldset class="form-group">
                 <label>Naissance : </label>
-                <input class="form-control" type="date" id="dob" name="user_dob">
+                <input class="form-control" type="date" id="dob" name="user_dob" ngModel>
             </fieldset>
         </div>
 
@@ -60,7 +60,7 @@
 
             <fieldset class="form-group">
                 <label>Num et voie*: </label>
-                <input class="form-control" type="text" id="addr" name="user_addr" required placeholder="Num et voie">
+                <input class="form-control" type="text" id="addr" name="user_addr" ngModel required placeholder="Num et voie">
             </fieldset>
         </div>
 
@@ -80,7 +80,7 @@
 
             <fieldset class="form-group">
                 <label>Code postal*: </label>
-                <input class="form-control" type="number" id="pcode" name="user_pcode" required placeholder="00000">
+                <input class="form-control" type="number" id="pcode" name="user_pcode" ngModel required placeholder="00000">
             </fieldset>
         </div>
 
@@ -89,7 +89,7 @@
         <div class="col-lg-4">
             <fieldset class="form-group">
                 <label>Ville* : </label>
-                <input class="form-control" type="text" id="city" name="user_city" required placeholder="Ville">
+                <input class="form-control" type="text" id="city" name="user_city" ngModel required placeholder="Ville">
             </fieldset>
         </div>
     </div>
@@ -100,7 +100,7 @@
                 <label for="status">Situation personnelle: </label>
 
                 <div>
-                    <select class="form-control" id="status">
+                    <select class="form-control" id="status" name="user_status" ngModel>
                         <option value="" disabled selected hidden> Votre situation </option>
                         <option value="1">Célibataire</option>
                         <option value="2">Marié(e)</option>
@@ -119,7 +119,7 @@
 
 
                 <label for="salary">Salaire net mensuel:</label>
-                <input class="form-control" type="number" id="salary" name="user_salary" placeholder="Salaire (€)">
+                <input class="form-control" type="number" id="salary" name="user_salary" placeholder="Salaire (€)" ngModel>
 
             </fieldset>
         </div>
