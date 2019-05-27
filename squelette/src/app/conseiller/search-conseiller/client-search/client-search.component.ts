@@ -14,7 +14,11 @@ import { CompteService } from '../../../client/compte.service';
 export class ClientSearchComponent implements OnInit {
 
     private id: string;
-    client: Client;
+    client;
+    situationmatri: string;
+    nbEnfants: any;
+    salaireClient: any;
+    naissanceClient: any;
     listeCompte;
 
     constructor(private route: ActivatedRoute, private clientService: ClientService, private compteService: CompteService) {
@@ -24,74 +28,56 @@ export class ClientSearchComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.id = params.id;
-        })
+        });
         console.log(this.id);
 
-        this.getClient();
+        this.clientService.getClient(this.id).subscribe(data => this.client = data);
+        console.log(this.client);
+
+        switch (this.client.getSituation()) {
+            case '1': {
+                this.situationmatri = 'Célibataire';
+                break;
+            }
+            case '2': {
+                this.situationmatri = 'Marié(e)';
+                break;
+            }
+            case '3': {
+                this.situationmatri = 'Concubinage';
+                break;
+            }
+            case '4': {
+                this.situationmatri = 'Divorcé(e)';
+                break;
+            }
+            case '5': {
+                this.situationmatri = 'Veuf';
+                break;
+            }
+            default: {
+                this.situationmatri = 'Non renseignée';
+                break;
+            }
+        }
+
+
+        if (this.client.getNombreEnfant() == null) {
+            this.nbEnfants = 'Non renseigné';
+        } else { this.nbEnfants = this.client.nombreEnfant + ' enfant(s)' }
+
+        if (this.client.salaire == null) {
+            this.salaireClient = 'Non renseigné';
+        } else { this.salaireClient = this.client.salaire + ' €' }
+
+        if (this.client.getNaissance() == null) {
+            this.naissanceClient = 'Non renseigné';
+        } else { this.naissanceClient = this.client.getNaissance; }
 
         this.listeCompte = this.compteService.getAll();
 
 
     }
 
-    getClient(){
-        this.clientService.getClient(this.id).subscribe(data => this.client = data);
-    }
 
-    getSituation():string{
-        console.log(this.client);
-
-        var situation:string;
-        switch (this.client.situation_perso) {
-            case '1': {
-                situation = 'Célibataire';
-                break;
-            }
-            case '2': {
-                situation = 'Marié(e)';
-                break;
-            }
-            case '3': {
-                situation = 'Concubinage';
-                break;
-            }
-            case '4': {
-                situation = 'Divorcé(e)';
-                break;
-            }
-            case '5': {
-                situation = 'Veuf';
-                break;
-            }
-            default: {
-                situation = 'Non renseignée';
-                break;
-            }
-        }
-        return situation ;
-    }
-
-    getEnfant(){
-        if(this.client.nombreEnfant == null){
-            return 'Non renseigné';
-        }else {
-            return this.client.nombreEnfant;
-        }
-    }
-
-    getSalaire(){
-        if(this.client.salaire == null){
-            return 'Non renseigné';
-        }else {
-            return this.client.salaire;
-        }
-    }
-
-    getNaissance(){
-        if(this.client.dateNaissance == null){
-            return 'Non renseigné';
-        }else {
-            return this.client.dateNaissance;
-        }
-    }
 }
