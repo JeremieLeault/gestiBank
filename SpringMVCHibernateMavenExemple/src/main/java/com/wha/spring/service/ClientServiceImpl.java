@@ -43,4 +43,9 @@ public class ClientServiceImpl implements IClientService{
 		dao.saveClient(client);
 	}
 
+	public List<Client> findAllClientsByConseiller(int mle) {
+		// TODO Auto-generated method stub
+		return dao.findAllClientsByConseiller(mle);
+	}
+
 }

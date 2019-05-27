@@ -1,0 +1,17 @@
+
+<h1>Détails du conseiller : {{conseiller.nom}} - Mle : {{conseiller.mle}}</h1>
+
+<ul class="list-group">
+  <li class="list-group-item"><b>Matricule : </b> {{conseiller.mle}}</li>
+  <li class="list-group-item"><b>Nom : </b> {{conseiller.nom}}</li>
+  <li class="list-group-item"><b>Prénom : </b> {{conseiller.prenom}}</li>
+  <li class="list-group-item"><b>Embauche : </b> {{conseiller.dateEmbauche}}</li>  
+  <li class="list-group-item"><b>Email : </b> {{conseiller.email}}</li>
+  <li class="list-group-item"><b>Téléphone : </b> {{conseiller.tel}}</li>
+  <li class="list-group-item"><b>Adresse : </b> {{conseiller.rue}} - {{conseiller.cp}} {{conseiller.ville}}</li>
+
+</ul>
+
+<div align="right">
+  <button type="submit" class="btn btn-primary" [routerLink]="['/dash-admin/search-admin']">Retour</button>
+  </div>

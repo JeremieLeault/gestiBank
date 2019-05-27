@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.wha.spring.iservice.IClientService;
 import com.wha.spring.model.Client;
 import com.wha.spring.model.Conseiller;
+import com.wha.spring.model.Demande;
 
 @RestController
 @RequestMapping("client")
@@ -32,6 +33,13 @@ public class ClientControllerRestService {
 		Client resultat = service.findById(id_client);
 		System.out.println(resultat);
 		return new ResponseEntity<Client>(resultat, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/getAll/{mle}")
+	public ResponseEntity<List<Client>> getAllClientsByConseiller(@PathVariable int mle) {
+		List<Client> resultat = service.findAllClientsByConseiller(mle);
+		System.out.println(resultat);
+		return new ResponseEntity<List<Client>>(resultat, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/getAll")

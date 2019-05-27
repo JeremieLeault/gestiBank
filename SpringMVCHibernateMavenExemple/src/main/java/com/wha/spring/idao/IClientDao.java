@@ -16,4 +16,6 @@ public interface IClientDao {
 	public Client findById(int id_client);
 
 	public void updateClient(Client client);
+
+	public List<Client> findAllClientsByConseiller(int mle);
 }
