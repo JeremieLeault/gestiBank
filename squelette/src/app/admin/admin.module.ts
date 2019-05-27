@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin.component';
 import { ConseillerService } from '../service/conseiller.service';
+import { ConseillerSearchComponent } from './search-admin/conseiller-search/conseiller-search.component';
 
 const adminRoutes: Routes = [
 
@@ -26,7 +27,8 @@ const adminRoutes: Routes = [
             { path: 'dash-admin/mail-admin', component: MailAdminComponent },
             { path: 'dash-admin/gesti-affect', component: GestiAffectComponent },
             { path: 'dash-admin/gesti-conseiller', component: GestiConseillerComponent },
-            { path: 'dash-admin/search-admin', component: SearchAdminComponent }
+            { path: 'dash-admin/search-admin', component: SearchAdminComponent },
+            { path: 'dash-admin/search-admin/view-conseiller/:id', component: ConseillerSearchComponent}
         ]
     },
     //  {
@@ -45,7 +47,8 @@ const adminRoutes: Routes = [
         AjoutConseillerComponent,
         ListConseillerComponent,
         EditConseillerComponent,
-        AdminComponent],
+        AdminComponent,
+        ConseillerSearchComponent],
     imports: [
         CommonModule,
         FormsModule,

@@ -19,6 +19,11 @@ private fakeConseillers : any = [
   getAll():Observable<Conseiller[]>{
     return this.http.get<Conseiller[]>(this.url + "getAll");
     }
+
+    getConseiller(id:string): Observable<Conseiller>{
+  return this.http.get<Conseiller>(this.url + id);
+
+}
  
   addConseiller(conseiller){
     //this.http.post<Conseiller>(this.url + "create").subscribe(data => this.conseiller = data)
