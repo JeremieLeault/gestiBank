@@ -1,32 +1,118 @@
- <h2>Nouveau conseiller</h2>
+<h1>Nouveau conseiller</h1>
+<p>(Les champs marqués d'un * sont obligatoires)</p>
 
-  <form #addNewConseillerForm="ngForm" (ngSubmit)="addNewConseiller(addNewConseillerForm.value)" method="POST">
-  <label for="mle">Mle *</label>
-  <input type="text" name="mle" id="mle"  ngModel>
+<form #addNewConseillerForm="ngForm" (ngSubmit)="addNewConseiller(addNewConseillerForm.value)" method="POST">
 
-  <label for="dateEmbauche">Date d'embauche *</label>
-  <input type="date" name="dateEmbauche" id="dateEmbauche" ngModel>
+    <div class="row">
+        <div class="col-lg-4">
 
-  <label for="nom">Nom *</label>
-  <input type="text" id="nom" name="nom" ngModel>
+            <fieldset class="form-group">
 
-  <label for="prenom">Prénom *</label>
-  <input type="text" id="prenom" name="prenom" ngModel>
 
-  <label for="email">Email</label>
-  <input type="text" id="email" name="email" ngModel>
+                <label for="mle">Mle *</label>
+                <input class="form-control" type="text" name="mle" id="mle" required placeholder="Matricule" ngModel>
 
-  <label for="tel">Téléphone *</label>
-  <input type="text" id="tel" name="tel" ngModel>
+            </fieldset>
+        </div>
 
-  <label for="adresse">Adresse</label>
-  <textarea name="adresse" id="adresse" cols="30" rows="10" ngModel></textarea>
+        <div class="col-lg-1"></div>
 
-  <label for="codePostale">Code postal</label>
-  <input type="text" id="codePostale" name="codePostale" ngModel>
+        <div class="col-lg-4">
+            <fieldset class="form-group">
 
-  <label for="ville">Ville</label>
-  <input type="text" id="ville" name="ville" ngModel>
+                <label for="dateEmbauche">Date d'embauche *</label>
+                <input class="form-control" type="date" name="dateEmbauche" id="dateEmbauche" required
+                    placeholder="Date" ngModel>
 
-  <input type="submit" [disabled]="!addNewConseillerForm.form.valid" value="Envoyer ma demande">
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+
+            <fieldset class="form-group">
+
+
+                <label for="nom">Nom *</label>
+                <input class="form-control" type="text" id="nom" name="nom" required placeholder="Nom" ngModel>
+
+            </fieldset>
+        </div>
+
+        <div class="col-lg-1"></div>
+
+        <div class="col-lg-4">
+            <fieldset class="form-group">
+
+                <label for="prenom">Prénom *</label>
+                <input class="form-control" type="text" id="prenom" name="prenom" required placeholder="Prénom" ngModel>
+
+
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+
+            <fieldset class="form-group">
+
+                <label for="email">Email *</label>
+                <input class="form-control" type="email" id="email" name="email" required
+                    placeholder="example@email.com" ngModel>
+
+            </fieldset>
+        </div>
+
+        <div class="col-lg-1"></div>
+
+        <div class="col-lg-4">
+            <fieldset class="form-group">
+
+                <label for="tel">Téléphone *</label>
+                <input class="form-control" type="text" id="tel" name="tel" required placeholder="Téléhpone" ngModel>
+
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-9">
+
+            <fieldset class="form-group">
+
+                <label for="adresse">Adresse</label>
+                <input class="form-control" name="adresse" id="adresse" placeholder="Numéro et Voie" ngModel>
+
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+
+            <fieldset class="form-group">
+
+                <label for="codePostale">Code postal</label>
+                <input class="form-control" type="text" id="codePostale" name="codePostale" placeholder="CP" ngModel>
+
+            </fieldset>
+        </div>
+
+        <div class="col-lg-1"></div>
+
+        <div class="col-lg-4">
+            <fieldset class="form-group">
+
+
+                <label for="ville">Ville</label>
+                <input class="form-control" type="text" id="ville" name="ville" placeholder="Ville" ngModel>
+
+            </fieldset>
+        </div>
+    </div>
+
+    <input type="submit" class="btn btn-primary" [disabled]="!addNewConseillerForm.form.valid" value="Ajouter">
+
 </form>

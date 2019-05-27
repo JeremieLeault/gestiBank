@@ -1,11 +1,33 @@
-<h2>Nouveau conseiller</h2>
+<!-- APPAREMMENT, ce n'est pas utilisé !  -->
+
+<h1>Nouveau conseiller</h1>
+<p>(Les champs marqués d'un * sont obligatoires)</p>
 
   <form #addNewConseillerForm="ngForm" (ngSubmit)="addNewConseiller(addNewConseillerForm.value)" method="POST">
+
+    <div class="row">
+        <div class="col-lg-4">
+
+            <fieldset class="form-group">
+
+
   <label for="mle">Mle *</label>
-  <input type="text" name="mle" id="mle"  ngModel>
+  <input class="form-control" type="text" name="mle" id="mle" required placeholder="Matricule" ngModel>
+
+            </fieldset>
+        </div>
+
+        <div class="col-lg-1"></div>
+
+        <div class="col-lg-4">
+            <fieldset class="form-group">
 
   <label for="dateEmbauche">Date d'embauche *</label>
   <input type="date" name="dateEmbauche" id="dateEmbauche" ngModel>
+
+            </fieldset>
+        </div>
+    </div>
 
   <label for="nom">Nom *</label>
   <input type="text" id="nom" name="nom" ngModel>
@@ -29,4 +51,5 @@
   <input type="text" id="ville" name="ville" ngModel>
 
   <input type="submit" [disabled]="!addNewConseillerForm.form.valid" value="Envoyer ma demande">
+
 </form>
