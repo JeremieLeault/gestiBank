@@ -15,15 +15,15 @@
          <td> Nom </td>
          <td> Prenom</td>
          <td> Adresse</td>
-         <td> Ville </td>
+         <td> CP - Ville</td>
          <td> EMail </td>
          <td> </td>
      </tr>
      <tr *ngFor="let list of listConseiller">
          <td> {{list.nom}}</td>
          <td> {{list.prenom}}</td>
-         <td> {{list.adresse}}</td>
-         <td> {{list.ville}}</td>
+         <td> {{list.address.rue}}</td>
+         <td> {{list.address.cp}} - {{list.address.ville}}</td>
          <td> {{list.email}}</td>
          <td> 
                <button type="submit" class="btn btn-primary" [routerLink]="['./view-conseiller', list.mle]"> Details </button>
