@@ -69,35 +69,7 @@ export class Client {
     }
 
     public getSituation(): string {
-
-        var situation:string;
-        switch (this.situation_perso) {
-            case '1': {
-                situation = 'Célibataire';
-                break;
-            }
-            case '2': {
-                situation = 'Marié(e)';
-                break;
-            }
-            case '3': {
-                situation = 'Concubinage';
-                break;
-            }
-            case '4': {
-                situation = 'Divorcé(e)';
-                break;
-            }
-            case '5': {
-                situation = 'Veuf';
-                break;
-            }
-            default: {
-                situation = 'Non renseignée';
-                break;
-            }
-        }
-        return situation ;
+        return this.situation_perso ;
     }
 
     public getSalaire(): Number {

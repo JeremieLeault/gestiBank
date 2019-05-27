@@ -13,6 +13,7 @@ import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin.component';
+import { ConseillerService } from '../service/conseiller.service';
 
 const adminRoutes: Routes = [
 
