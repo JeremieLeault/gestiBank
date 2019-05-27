@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "findDemandeById", query = "SELECT d from Demande d WHERE d.id_demande=:id_demande"),
-		@NamedQuery(name = "findDemandeByClient", query = "SELECT d from Demande d WHERE d.client_id_client=:client_id_client"),
+		@NamedQuery(name = "findDemandeByClient", query = "SELECT d from Demande d WHERE d.client.id_client=:id_client"),
 		@NamedQuery(name = "findDemandeByDate", query = "SELECT d from Demande d WHERE d.date_demande=:date_demande") })
 @Table(name = "DEMANDE")
 public class Demande {
