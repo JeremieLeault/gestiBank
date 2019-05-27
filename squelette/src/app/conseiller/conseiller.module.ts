@@ -12,9 +12,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientSearchComponent } from './search-conseiller/client-search/client-search.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ConseillerService } from './conseiller.service';
-import { ClientService } from '../client/client.service';
 import { ConseillerComponent } from './conseiller.component';
+import { ClientService } from '../service/client.service';
+import { ConseillerService } from '../service/conseiller.service';
 
 const conseillerRoutes: Routes = [
   { path: '', component: ConseillerComponent,

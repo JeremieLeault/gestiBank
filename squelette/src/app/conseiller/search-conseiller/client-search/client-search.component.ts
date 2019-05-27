@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
-import { Client } from '../../../client/client';
-import { ClientService } from '../../../client/client.service';
-import { CompteService } from '../../../client/compte.service';
+import { Client } from '../../../model/user/client';
+import { ClientService } from '../../../service/client.service';
+import { CompteService } from '../../../service/compte.service';
 
 
 @Component({

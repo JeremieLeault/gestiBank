@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConseillerService } from 'src/app/conseiller/conseiller.service';
+import { ConseillerService } from '../../service/conseiller.service';
 
 @Component({
   selector: 'app-gesti-conseiller',

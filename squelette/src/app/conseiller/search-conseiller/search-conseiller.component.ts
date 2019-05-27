@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientService } from '../../client/client.service';
-import { Client } from '../../client/client';
+import { ClientService } from '../../service/client.service';
+
 
 @Component({
   selector: 'app-search-conseiller',

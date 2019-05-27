@@ -12,7 +12,6 @@ import { ListConseillerComponent } from './list-conseiller/list-conseiller.compo
 import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ConseillerService } from '../conseiller/conseiller.service';
 import { AdminComponent } from './admin.component';
 
 const adminRoutes: Routes = [

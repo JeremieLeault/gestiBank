@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ConseillerService } from '../../conseiller/conseiller.service';
+import { ConseillerService } from '../../service/conseiller.service';
+
 
 @Component({
   selector: 'app-search-admin',

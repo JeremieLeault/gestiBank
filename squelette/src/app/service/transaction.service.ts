@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Depot } from './depot';
-import { Retrait } from './retrait';
-import { Mouvement } from './mouvement';
+import { Depot } from '../model/mouvement/depot';
+import { Retrait } from '../model/mouvement/retrait';
+import { Mouvement } from '../model/mouvement/mouvement';
+
 
 @Injectable({
   providedIn: 'root'

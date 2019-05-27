@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Conseiller} from "../conseiller/conseiller";
+import { Conseiller} from "../model/user/conseiller";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Client } from '../client/client';
+import { Client } from '../model/user/client';
 
 @Injectable()
 export class ConseillerService {

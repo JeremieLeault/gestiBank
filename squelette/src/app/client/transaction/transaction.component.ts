@@ -1,8 +1,9 @@
 import { OnInit, Component } from '@angular/core';
-import { CompteService } from '../compte.service';
-import { Compte } from '../compte';
-import { TransactionService } from './transaction.service';
-import { Retrait } from './retrait';
+import { Compte } from '../../model/user/compte';
+import { CompteService } from '../../service/compte.service';
+import { Retrait } from '../../model/mouvement/retrait';
+import { TransactionService } from '../../service/transaction.service';
+
 
 @Component({
   selector: 'app-transaction',

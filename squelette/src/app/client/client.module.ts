@@ -5,8 +5,8 @@ import { MenuClientComponent } from './menu-client/menu-client.component';
 import { FormsModule } from '@angular/forms';
 import { ClientComponent } from './client.component';
 import { ClientRootingModule } from './client-rooting.module';
-import { ClientService } from './client.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientService } from '../service/client.service';
 
 @NgModule({
   declarations: [

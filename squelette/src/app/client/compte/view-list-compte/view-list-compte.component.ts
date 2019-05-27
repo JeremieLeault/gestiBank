@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CompteService } from '../../compte.service';
+import { CompteService } from '../../../service/compte.service';
+
 
 @Component({
   selector: 'app-view-list-compte',

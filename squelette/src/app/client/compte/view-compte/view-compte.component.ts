@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import { Compte } from '../../compte';
-import { CompteService } from '../../compte.service';
-import { TransactionService } from '../../transaction/transaction.service';
-import { Depot } from '../../transaction/depot';
-import { Mouvement } from '../../transaction/mouvement';
+import { Compte } from '../../../model/user/compte';
+import { CompteService } from '../../../service/compte.service';
+import { TransactionService } from '../../../service/transaction.service';
+import { Depot } from '../../../model/mouvement/depot';
+import { Mouvement } from '../../../model/mouvement/mouvement';
+
 
 @Component({
   selector: 'app-view-compte',
