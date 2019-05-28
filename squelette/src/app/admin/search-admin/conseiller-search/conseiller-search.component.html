@@ -5,7 +5,7 @@
   <li class="list-group-item"><b>Matricule : </b> {{conseiller.mle}}</li>
   <li class="list-group-item"><b>Nom : </b> {{conseiller.nom}}</li>
   <li class="list-group-item"><b>Prénom : </b> {{conseiller.prenom}}</li>
-  <li class="list-group-item"><b>Embauche : </b> {{conseiller.dateEmbauche}}</li>  
+  <li class="list-group-item"><b>Embauche : </b> {{conseiller.dateEmbauche | date: 'dd/MM/yyyy'}}</li>  
   <li class="list-group-item"><b>Email : </b> {{conseiller.email}}</li>
   <li class="list-group-item"><b>Téléphone : </b> {{conseiller.tel}}</li>
   <li class="list-group-item"><b>Adresse : </b> {{conseiller.address.rue}} - {{conseiller.address.cp}} {{conseiller.address.ville}}</li>

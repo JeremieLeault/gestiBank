@@ -3,7 +3,7 @@
     <ul class="list-group">
   <li class="list-group-item"><b>Nom : </b> {{client.nom}}</li>
   <li class="list-group-item"><b>Prénom : </b> {{client.prenom}}</li>
-  <li class="list-group-item"><b>Naissance : </b> {{client.dateNaissance}}</li>  
+  <li class="list-group-item"><b>Naissance : </b> {{client.dateNaissance | date: 'dd/MM/yyyy'}}</li>  
   <li class="list-group-item"><b>Email : </b> {{client.email}}</li>
   <li class="list-group-item"><b>Téléphone : </b> {{client.tel}}</li>
   <li class="list-group-item"><b>Adresse : </b> {{client.address.rue}} - {{client.address.cp}} {{client.address.ville}}</li>

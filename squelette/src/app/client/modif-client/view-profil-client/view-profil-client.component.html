@@ -43,7 +43,7 @@
 
        <fieldset class="form-group">
                    <label>Naissance : </label>
-                   <input class="form-control" type="date" id="dob" name="user_dob" value = "{{client.dateNaissance}}" required>
+                   <input class="form-control" type="date" id="dob" name="user_dob" value = "{{client.dateNaissance | date: 'dd/MM/yyyy'}}" required>
         </fieldset>
        </div>
 
