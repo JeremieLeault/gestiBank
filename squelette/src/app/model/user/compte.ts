@@ -1,10 +1,11 @@
 export class Compte {
-    private numeroCompte: Number; 
-	private idClient: Number;
-	private typeCompte: Number;
-	private decouverAutorise: Number;
-    private plafondAutorise: Number;
-    private solde:Number;
+
+    numeroCompte: Number; 
+	idClient: Number;
+	typeCompte: Number;
+	decouverAutorise: Number;
+    plafondAutorise: Number;
+    solde:Number;
 
 	/**
 	 * on a obligatoirement besoin d'un client pour creer un compte <3

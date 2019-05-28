@@ -54,4 +54,10 @@ public class ClientControllerRestService {
 		service.saveClient(clt);
 		return clt;
 	}
+	
+	@RequestMapping(value = "/delete/{id_client}", method=RequestMethod.GET)
+	public String deleteClient(@PathVariable int id_client) {
+		service.deleteClient(id_client);
+		return "Client supprimé";
+	}
 }

@@ -14,7 +14,13 @@ export class ViewProfilClientComponent implements OnInit {
 
   ngOnInit() {
    this.clientserv.getClient("1").subscribe(data => this.client = data) ; 
-      console.log(this.client) ; 
   }
 
+
+  getSituation(){
+    if (this.client == null || this.client.situation_perso == ""){
+      return 1;
+    }
+    return this.client.situation_perso;
+  }
 }

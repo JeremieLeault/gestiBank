@@ -7,6 +7,8 @@ import { ClientComponent } from './client.component';
 import { ClientRootingModule } from './client-rooting.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientService } from '../service/client.service';
+import { CompteService } from '../service/compte.service';
+import { TransactionService } from '../service/transaction.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ClientService } from '../service/client.service';
     HttpClientModule
   ],
   providers:[
-    ClientService
+    ClientService,
+    CompteService,
+    TransactionService
   ]
 })
 export class ClientModule { }

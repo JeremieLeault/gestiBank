@@ -8,11 +8,11 @@
           <td> </td>
       </tr>
       <tr *ngFor="let listCompte of listCompte">
-          <td> {{listCompte.numeroCompte}}</td>
+          <td> {{listCompte.numCompte}}</td>
           <td> {{listCompte.typeCompte}}</td>
           <td> {{listCompte.solde}} euros</td>
           <td> 
-                <button type="submit" class="btn btn-primary" [routerLink]="['./view-compte', listCompte.numeroCompte]">Details</button>
+                <button type="submit" class="btn btn-primary" [routerLink]="['./view-compte', listCompte.numCompte]">Details</button>
           </td>
           <td>
               <button type="submit" class="btn btn-info" onclick="alert('Votre demande de chéquier a bien été prise en compte. Votre conseiller Gestibank.');">Commander un chéquier</button>

@@ -14,4 +14,12 @@ public abstract class AbstractDao {
 	public void delete(Object entity) {
 		em.remove(entity);
 	}
+
+	public EntityManager getEm() {
+		return em;
+	}
+
+	public void setEm(EntityManager em) {
+		this.em = em;
+	}
 }
