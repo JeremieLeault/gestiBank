@@ -12,4 +12,6 @@ public interface ITransactionDao {
 	List<Transaction> findAllTransactions();
 
 	Transaction findById(int id_transaction);
+
+	List<Transaction> findByNum(int numCompte);
 }

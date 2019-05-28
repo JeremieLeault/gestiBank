@@ -13,4 +13,6 @@ public interface ITransactionService {
 
 	Transaction findById(int id_transaction);
 
+	List<Transaction> findByCompte(int numCompte);
+
 }

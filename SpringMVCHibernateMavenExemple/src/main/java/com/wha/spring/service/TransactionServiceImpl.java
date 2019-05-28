@@ -31,4 +31,9 @@ public class TransactionServiceImpl implements ITransactionService {
 		return dao.findById(id_transaction);
 	}
 
+	public List<Transaction> findByCompte(int numCompte) {
+		// TODO Auto-generated method stub
+		return dao.findByNum(numCompte);
+	}
+
 }

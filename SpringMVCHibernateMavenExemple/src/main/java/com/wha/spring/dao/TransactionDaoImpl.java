@@ -32,4 +32,11 @@ public class TransactionDaoImpl extends AbstractDao implements ITransactionDao{
 		return res;
 	}
 
+	public List<Transaction> findByNum(int numCompte) {
+		Query q = em.createNamedQuery("findTransactionByNum");
+		q.setParameter("numCompte", numCompte);
+		List<Transaction> res = q.getResultList();
+		return null;
+	}
+
 }
