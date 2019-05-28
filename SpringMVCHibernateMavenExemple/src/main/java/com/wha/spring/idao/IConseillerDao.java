@@ -11,8 +11,8 @@ public interface IConseillerDao {
 
 	List<Conseiller> findAllConseillers();
 
-	void deleteConseillerByMle(int mle);
-
 	Conseiller findByMle(int mle);
+	
+	public void deleteConseiller(int mle);
 
 }

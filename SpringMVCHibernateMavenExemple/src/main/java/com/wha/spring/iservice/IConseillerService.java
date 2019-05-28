@@ -13,5 +13,7 @@ public interface IConseillerService {
 	void deleteConseillerByMle(int mle);
 
 	Conseiller findByMle(int mle);
+	
+	public void deleteConseiller(int mle);
 
 }

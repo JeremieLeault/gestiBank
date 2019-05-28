@@ -49,5 +49,10 @@ public class ConseillerControllerRestService {
 		return cns;
 	}
 	
+	@RequestMapping(value = "/delete/{mle}", method=RequestMethod.GET)
+	public String deleteConseiller(@PathVariable int mle) {
+		service.deleteConseiller(mle);
+		return "Conseiller supprimé";
+	}
 	
 }

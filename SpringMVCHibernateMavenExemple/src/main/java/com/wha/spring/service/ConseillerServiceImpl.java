@@ -29,10 +29,6 @@ public class ConseillerServiceImpl implements IConseillerService{
 		return dao.findAllConseillers();
 	}
 
-	public void deleteConseillerByMle(int mle) {
-		// TODO Auto-generated method stub
-		dao.deleteConseillerByMle(mle);
-	}
 
 	public Conseiller findByMle(int mle) {
 		// TODO Auto-generated method stub
@@ -42,6 +38,15 @@ public class ConseillerServiceImpl implements IConseillerService{
 	public void updateConseiller(Conseiller conseiller) {
 		// TODO Auto-generated method stub
 		dao.saveConseiller(conseiller);
+	}
+
+	public void deleteConseillerByMle(int mle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteConseiller(int mle) {
+		dao.deleteConseiller(mle);
 	}
 
 
