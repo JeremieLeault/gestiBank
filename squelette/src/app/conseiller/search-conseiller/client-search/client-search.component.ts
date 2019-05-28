@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../../../service/client.service';
 import { CompteService } from '../../../service/compte.service';
-import { SIGTERM } from 'constants';
 
 
 
@@ -93,5 +92,4 @@ export class ClientSearchComponent implements OnInit {
              return this.client.getNaissance; 
         }
     }
-
 }

@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Conseiller} from "../model/user/conseiller";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Client } from '../model/user/client';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable()
 export class ConseillerService {
@@ -26,7 +31,7 @@ export class ConseillerService {
 }
  
   addConseiller(conseiller){
-    //this.http.post<Conseiller>(this.url + "create").subscribe(data => this.conseiller = data)
+    this.http.post<Conseiller>(this.url + "create",conseiller,httpOptions);
 //    console.log(this.fakeConseillers);
   }
 
@@ -38,9 +43,8 @@ export class ConseillerService {
 //       }
 //     }
 //     console.log(this.fakeConseillers);
-  }
+  searchConseiller(search):Observable<Conseiller>{
+  return this.http.get<Conseiller>(this.url + search);
+ }
+}
 
-//  searchConseiller(search):Observable<Conseiller>{
-    
-//    return this.http.get<Conseiller>(this.url + search);
-//  }
