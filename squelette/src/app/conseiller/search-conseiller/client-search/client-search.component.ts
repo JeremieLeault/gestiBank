@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../../../service/client.service';
 import { CompteService } from '../../../service/compte.service';
+import { SIGTERM } from 'constants';
 
 
 
@@ -15,10 +16,6 @@ export class ClientSearchComponent implements OnInit {
 
     private id: string;
     client;
-    situationmatri: string;
-    nbEnfants: any;
-    salaireClient: any;
-    naissanceClient: any;
     listeCompte;
 
     constructor(private route: ActivatedRoute, private clientService: ClientService, private compteService: CompteService) {
@@ -34,50 +31,67 @@ export class ClientSearchComponent implements OnInit {
         this.clientService.getClient(this.id).subscribe(data => this.client = data);
         console.log(this.client);
 
-        switch (this.client.getSituation()) {
-            case '1': {
-                this.situationmatri = 'Célibataire';
-                break;
-            }
-            case '2': {
-                this.situationmatri = 'Marié(e)';
-                break;
-            }
-            case '3': {
-                this.situationmatri = 'Concubinage';
-                break;
-            }
-            case '4': {
-                this.situationmatri = 'Divorcé(e)';
-                break;
-            }
-            case '5': {
-                this.situationmatri = 'Veuf';
-                break;
-            }
-            default: {
-                this.situationmatri = 'Non renseignée';
-                break;
-            }
-        }
-
-
-        if (this.client.getNombreEnfant() == null) {
-            this.nbEnfants = 'Non renseigné';
-        } else { this.nbEnfants = this.client.nombreEnfant + ' enfant(s)' }
-
-        if (this.client.salaire == null) {
-            this.salaireClient = 'Non renseigné';
-        } else { this.salaireClient = this.client.salaire + ' €' }
-
-        if (this.client.getNaissance() == null) {
-            this.naissanceClient = 'Non renseigné';
-        } else { this.naissanceClient = this.client.getNaissance; }
 
         this.listeCompte = this.compteService.getAll();
 
 
     }
 
+    getSituation(situation){
+        
+        var sit;
+        switch (situation) {
+            
+            case '1': {
+                sit= 'Célibataire';
+                break;
+            }
+            case '2': {
+                sit = 'Marié(e)';
+                break;
+            }
+            case '3': {
+                sit = 'Concubinage';
+                break;
+            }
+            case '4': {
+               sit = 'Divorcé(e)';
+                break;
+            }
+            case '5': {
+                sit = 'Veuf';
+                break;
+            }
+            default: {
+                sit = 'Non renseignée';
+                break;
+            }
+        }
+        return sit;
+    }
+
+    getNbEnfant(){
+        if (this.client.nombreEnfant == null) {
+           return 'Non renseigné';
+        } else {
+            return  this.client.nombreEnfant + ' enfant(s)' ;
+        }
+    }
+
+    getSalary(){
+        if (this.client.salaire == null) {
+            return 'Non renseigné';
+        } else {
+             return this.client.salaire + ' €' ;
+        }
+    }
+
+    getNaissance(){
+        if (this.client.getNaissance() == null) {
+            return 'Non renseigné';
+        } else {
+             return this.client.getNaissance; 
+        }
+    }
 
 }

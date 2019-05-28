@@ -10,13 +10,13 @@ import { ClientService } from '../../service/client.service';
 export class SearchConseillerComponent implements OnInit {
 
 
+  private listClient;
   private listClientAffiche;
   private search: string = "";
   constructor(private clientService: ClientService) { }
 
   ngOnInit() {
     this.clientService.getAll().subscribe(data => this.listClientAffiche = data);
-    
   }
 
   doSearch(search) {
