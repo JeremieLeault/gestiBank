@@ -1,3 +1,5 @@
+import { Address } from './address';
+
 export class Client {
     
     id_client: Number;
@@ -6,9 +8,7 @@ export class Client {
     prenom: string;
     email: string;
     telephone: string;
-    adresse: string;
-    codePostal: Number;
-    ville: string;
+    address: Address;
     situation_perso: string;
     nombreEnfant: Number;
     conseiller: Number;
@@ -17,16 +17,14 @@ export class Client {
     typeCpt: string;
     dateDemande:Date;
 
-    constructor(id_client:Number, motDePasse:string, nom:string, prenom:string, email:string, telephone:string, adresse, codePostal, ville, situation_perso:string, nombreEnfant, conseiller, dateNaissance:Date,salaire:Number) {
+    constructor(id_client:Number, motDePasse:string, nom:string, prenom:string, email:string, telephone:string, address: Address, situation_perso:string, nombreEnfant, conseiller, dateNaissance:Date, salaire:Number) {
         this.id_client = id_client;
         this.motDePasse = motDePasse;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.telephone = telephone;
-        this.adresse = adresse;
-        this.codePostal = codePostal;
-        this.ville = ville;
+        this.address= address;
         this.situation_perso = situation_perso ;
         this.conseiller = conseiller;
         this.salaire = salaire ;
@@ -54,18 +52,6 @@ export class Client {
 
     public getNaissance(): Date {
         return this.dateNaissance ;
-    }
-
-    public getAdresse(): string {
-        return this.adresse ;
-    }
-
-    public getCodePostal(): Number {
-        return this.codePostal ;
-    }
-
-    public getVille(): string {
-        return this.ville ;
     }
 
     public getSituation(): string {

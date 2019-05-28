@@ -36,10 +36,10 @@ export class ClientSearchComponent implements OnInit {
 
     }
 
-    getSituation(situation){
+    getSituation(){
         
         var sit;
-        switch (situation) {
+        switch (this.client.situation_perso) {
             
             case '1': {
                 sit= 'Célibataire';
@@ -62,7 +62,7 @@ export class ClientSearchComponent implements OnInit {
                 break;
             }
             default: {
-                sit = 'Non renseignée';
+                sit = 'Situation matrimoniale non renseignée';
                 break;
             }
         }
@@ -71,7 +71,7 @@ export class ClientSearchComponent implements OnInit {
 
     getNbEnfant(){
         if (this.client.nombreEnfant == null) {
-           return 'Non renseigné';
+           return 'Enfants non renseigné';
         } else {
             return  this.client.nombreEnfant + ' enfant(s)' ;
         }
@@ -86,10 +86,10 @@ export class ClientSearchComponent implements OnInit {
     }
 
     getNaissance(){
-        if (this.client.getNaissance() == null) {
+        if (this.client.dateNaissance == null) {
             return 'Non renseigné';
         } else {
-             return this.client.getNaissance; 
+             return this.client.dateNaissance; 
         }
     }
 }

@@ -22,8 +22,8 @@
      <tr *ngFor="let listClient of listClientAffiche">
          <td> {{listClient.nom}}</td>
          <td> {{listClient.prenom}}</td>
-         <td> {{listClient.adresse}}</td>
-         <td> {{listClient.ville}}</td>
+         <td> {{listClient.address.rue}}</td>
+         <td> {{listClient.address.cp}} - {{listClient.address.ville}}</td>
          <td> {{listClient.email}}</td>
          <td> 
                <button type="submit" class="btn btn-primary" [routerLink]="['./view-client', listClient.id_client]"> Details </button>
