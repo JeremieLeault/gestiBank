@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Query;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import com.wha.spring.idao.IClientDao;
@@ -22,10 +23,6 @@ public class ClientDaoImpl extends AbstractDao implements IClientDao {
 		return res;
 	}
 
-	public void deleteCLientById(int id_client) {
-
-	}
-
 	public Client findById(int id_client) {
 		Query q = em.createNamedQuery("findClientById");
 		q.setParameter("id_client", id_client);
@@ -33,9 +30,15 @@ public class ClientDaoImpl extends AbstractDao implements IClientDao {
 		return res;
 	}
 
-	public void updateClient(Client client) {
-		// TODO Auto-generated method stub
-		em.merge(client);
+	public void updateClient(int id_client) {
+		Query q = em.createNamedQuery("updateClient");
+		q.setParameter("id_client", id_client);
+		em.merge(id_client);
+	}
+	
+	public void deleteClient(int id_client) {
+		Client cli = findById(id_client);
+		em.remove(cli);
 	}
 
 	public List<Client> findAllClientsByConseiller(int mle) {
@@ -44,4 +47,23 @@ public class ClientDaoImpl extends AbstractDao implements IClientDao {
 		List<Client> res = q.getResultList();
 		return res;
 	}
+
+	private final static Logger logger = Logger.getLogger(ClientDaoImpl.class);
+
+	public Client saveUser(Client client) {
+//Appel de la méthod Warn de la class Logger
+		logger.warn("begin save user process");
+		getEm().persist(client);
+
+//Appel de la méthod debug de la class Logger
+		logger.debug("end save user process");
+		return client;
+	}
+
+	public Client findByIdLog(int id_client) {
+//Appel de la méthod init de la class Logger
+		logger.info("find user by ID");
+		return (Client) getEm().find(Client.class, id_client);
+	}
+
 }

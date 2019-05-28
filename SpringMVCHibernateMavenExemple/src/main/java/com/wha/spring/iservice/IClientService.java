@@ -6,15 +6,16 @@ import com.wha.spring.model.Client;
 
 public interface IClientService {
 
-	void saveClient(Client client);
+	public void saveClient(Client client);
 
-	List<Client> findAllClients();
+	public List<Client> findAllClients();
 
-	void deleteCLientById(int id_client);
+	public Client findById(int id_client);
 
-	Client findById(int id_client);
+	public void updateClient(int id_client);
 
-	void updateClient(Client client);
-
-	List<Client> findAllClientsByConseiller(int mle);
+	public List<Client> findAllClientsByConseiller(int mle);
+	
+	public void deleteClient(int id_client);	
+	
 }

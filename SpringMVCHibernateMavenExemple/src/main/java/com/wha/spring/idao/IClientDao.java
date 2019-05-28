@@ -11,11 +11,12 @@ public interface IClientDao {
 
 	public List<Client> findAllClients();
 
-	public void deleteCLientById(int id_client);
-
 	public Client findById(int id_client);
 
-	public void updateClient(Client client);
+	public void updateClient(int id_client);
 
 	public List<Client> findAllClientsByConseiller(int mle);
+	
+	public void deleteClient(int id_client);
+
 }
