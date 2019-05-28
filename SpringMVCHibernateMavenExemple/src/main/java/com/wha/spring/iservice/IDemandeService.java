@@ -14,7 +14,7 @@ public interface IDemandeService {
 
 	void saveDemande(Demande dmd);
 
-	Demande findByClient(int id_client);
+	List<Demande> findByClient(int id_client);
 
 	Demande findByDate(Calendar date_demande);
 

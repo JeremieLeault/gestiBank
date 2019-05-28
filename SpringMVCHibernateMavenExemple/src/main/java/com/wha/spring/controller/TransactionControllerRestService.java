@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wha.spring.iservice.ITransactionService;
+import com.wha.spring.model.Demande;
 import com.wha.spring.model.Transaction;
 
 @RestController
@@ -31,6 +32,13 @@ public class TransactionControllerRestService {
 		Transaction resultat = service.findById(id_transaction);
 		System.out.println(resultat);
 		return new ResponseEntity<Transaction>(resultat, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/compte/{num}")
+	public ResponseEntity<List<Transaction>> getTransactionByNum(@PathVariable int numCompte) {
+		List<Transaction> resultat = service.findByCompte(numCompte);
+		System.out.println(resultat);
+		return new ResponseEntity<List<Transaction>>(resultat, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/getAll")

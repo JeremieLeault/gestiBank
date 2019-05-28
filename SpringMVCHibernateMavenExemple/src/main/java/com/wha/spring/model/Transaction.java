@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @NamedQueries({
 	@NamedQuery( name = "findAllTransactions", query = "SELECT t from Transaction t"),
+	@NamedQuery(name = "findTransactionByNum", query = "SELECT t from Transaction t WHERE t.compte.numCompte=:numCompte"),
 	@NamedQuery( name = "findTransactionById", query = "SELECT t from Transaction t WHERE t.id_transaction=:id_transaction")
 })
 @Table(name= "TRANSACTION")
