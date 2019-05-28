@@ -17,6 +17,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 
 
 @Entity
@@ -52,7 +55,7 @@ public class Conseiller {
 	@OneToOne(cascade = { CascadeType.ALL })
 	private Address address;
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "compte")
 	private Collection<Client> client;
 	
 	@OneToOne(cascade = { CascadeType.ALL})

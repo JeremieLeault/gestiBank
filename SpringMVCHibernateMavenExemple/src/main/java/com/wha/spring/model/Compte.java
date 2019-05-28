@@ -13,6 +13,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 
 @NamedQueries({
@@ -47,6 +49,7 @@ public class Compte {
 
 	@OneToMany(cascade = { CascadeType.ALL}, fetch = FetchType.EAGER )
 	private Collection<Transaction> transaction;
+	
 	
 	@ManyToOne(cascade = { CascadeType.ALL}, fetch = FetchType.EAGER)
 	private Client client;
