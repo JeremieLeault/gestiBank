@@ -7,6 +7,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import com.wha.spring.idao.IConseillerDao;
+import com.wha.spring.model.Client;
 import com.wha.spring.model.Conseiller;
 
 @Repository("conseillerDao")
@@ -22,8 +23,9 @@ public class ConseillerDaoImpl extends AbstractDao implements IConseillerDao {
 		return res;
 	}
 
-	public void deleteConseillerByMle(int mle) {
-
+	public void deleteConseiller(int mle) {
+		Conseiller cli = findByMle(mle);
+		em.remove(cli);
 	}
 
 	public Conseiller findByMle(int mle) {
@@ -36,8 +38,6 @@ public class ConseillerDaoImpl extends AbstractDao implements IConseillerDao {
 	public void updateConseiller(Conseiller conseiller) {
 		// TODO Auto-generated method stub
 		em.merge(conseiller);
-	}
-
-	
+	}	
 
 }

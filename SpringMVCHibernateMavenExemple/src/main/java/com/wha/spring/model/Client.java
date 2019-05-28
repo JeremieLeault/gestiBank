@@ -29,7 +29,6 @@ import org.joda.time.LocalDate;
 				@NamedQuery(name = "findClientById", query = "SELECT c from Client c WHERE c.id_client=:id_client"),
 //				@NamedQuery(name = "updateClient", query = "UPDATE Client SET nom_colonne_1 = 'nouvelle valeur'\r\n" + 
 //						"WHERE condition c from Client c WHERE c.id_client=:id_client"),
-				@NamedQuery(name = "removeClient", query = "DELETE Client c WHERE c.id_client=:id_client"),
 				})
 
 @Table(name = "CLIENT")
