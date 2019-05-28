@@ -31,12 +31,23 @@ export class ClientSearchComponent implements OnInit {
         console.log(this.client);
 
 
-        this.listeCompte = this.compteService.getAll();
+        this.compteService.getAllCptCli(this.id).subscribe(data => this.listeCompte = data);
 
 
     }
 
-    getSituation(){
+    getType(a) {
+        var type;
+        switch (a) {
+            case "1": {type= 'Compte simple' ; break;}
+            case "2" : {type= 'Compte avec autorisation de découvert' ; break;}
+            case "3" : {type= 'Compte rénuméré' ; break; }
+            default : {type= 'Pas de compte' ; break }
+    }
+    return type ; 
+}
+
+    getSituation() {
         
         var sit;
         switch (this.client.situation_perso) {
@@ -69,7 +80,7 @@ export class ClientSearchComponent implements OnInit {
         return sit;
     }
 
-    getNbEnfant(){
+    getNbEnfant() {
         if (this.client.nombreEnfant == null) {
            return 'Enfants non renseigné';
         } else {
@@ -77,7 +88,7 @@ export class ClientSearchComponent implements OnInit {
         }
     }
 
-    getSalary(){
+    getSalary() {
         if (this.client.salaire == null) {
             return 'Non renseigné';
         } else {
@@ -85,7 +96,7 @@ export class ClientSearchComponent implements OnInit {
         }
     }
 
-    getNaissance(){
+    getNaissance() {
         if (this.client.dateNaissance == null) {
             return 'Non renseigné';
         } else {

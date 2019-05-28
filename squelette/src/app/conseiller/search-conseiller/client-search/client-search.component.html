@@ -19,10 +19,10 @@
           <td> Solde</td>
       </tr>
 
-      <tr *ngFor="let listeCompte of listeCompte">
-          <td> {{listeCompte.numeroCompte}}</td>
-          <td> {{listeCompte.modifType(listeCompte.typeCompte)}}</td>
-          <td> {{listeCompte.solde}} €</td>
+      <tr *ngFor="let list of listeCompte">
+          <td> {{list.numCompte}}</td>
+          <td> {{getType(list.typeCompte)}}</td>
+          <td> {{list.solde}} €</td>
       </tr>
      </table>
   </section>

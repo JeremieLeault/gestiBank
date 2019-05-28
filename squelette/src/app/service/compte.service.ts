@@ -23,6 +23,10 @@ export class CompteService {
     return this.http.get<Compte[]>(this.url + "getAll");
   }
 
+    getAllCptCli(id: string) :Observable<Compte[]> {
+    return this.http.get<Compte[]>(this.url + "getAll/" + id);
+    }
+
   getCompte(id:number):Observable<Compte>{
     return this.http.get<Compte>(this.url + id);
   }
