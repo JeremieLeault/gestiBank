@@ -13,8 +13,7 @@ export class ViewListCompteComponent implements OnInit {
   constructor(private compteService: CompteService) { }
 
   ngOnInit() {
-    this.listCompte = this.compteService.getAll();
-     console.log(this.listCompte);
+    this.compteService.getAll().subscribe(data => this.listCompte = data);
   }
 
 }

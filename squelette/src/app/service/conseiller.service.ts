@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Conseiller} from "../model/user/conseiller";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Client } from '../model/user/client';
 
 
 const httpOptions = {
@@ -16,8 +15,6 @@ export class ConseillerService {
 //      new Conseiller(1,"12/03/2019","stephane","stephane","stephane@gmail.com","0711111111","10 rue jean jaures",69000,"Lyon")
 //    ];
 
-  private conseillerList: Conseiller[];
-  private conseiller;
   url:string = "http://localhost:8080/BackEnd/conseiller/";
 
   constructor(private http: HttpClient) { }

@@ -25,7 +25,7 @@ export class ViewCompteComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params['id'];
    });
-    this.compte = this.compteService.getCompte(this.id);
+    this.compteService.getCompte(this.id).subscribe(data => this.compte = data);
     console.log(this.compte);
 
     this.listMouvement = this.transactionService.getTransaction(this.id);

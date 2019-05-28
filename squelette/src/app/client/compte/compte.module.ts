@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { ViewCompteComponent } from './view-compte/view-compte.component';
 import { ViewListCompteComponent } from './view-list-compte/view-list-compte.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { TransactionService } from '../../service/transaction.service';
+import { ClientService } from '../../service/client.service';
 
 const routes: Routes = [
   { path: '', component: ViewListCompteComponent },
@@ -14,7 +17,16 @@ const routes: Routes = [
     ViewCompteComponent,
     ViewListCompteComponent
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    HttpClientModule],
+  exports: [
+    RouterModule
+  ],
+  providers:[
+    ClientService,
+    TransactionService
+  ]
 })
 export class CompteModule { }
