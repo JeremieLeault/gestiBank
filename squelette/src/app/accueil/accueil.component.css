@@ -33,3 +33,12 @@ div#slider figure {
   text-align: left;
   animation: 30s slidy infinite;
 }
+
+div#centrer {
+  position: absolute; /* postulat de départ */
+   top: 50%; left: 50%; /* à 50%/50% du parent référent */
+}
+
+div#txtcentre {
+    text-align: center; /* centré */
+}

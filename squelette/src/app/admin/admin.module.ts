@@ -22,6 +22,7 @@ const adminRoutes: Routes = [
         path: '',
         component: AdminComponent,
         children: [
+            { path: '', component: DashAdminComponent},
             { path: 'dash-admin/ajout-conseiller', component: AjoutConseillerComponent },
             { path: 'dash-admin/edit-conseiller', component: EditConseillerComponent },
             { path: 'dash-admin/mail-admin', component: MailAdminComponent },
